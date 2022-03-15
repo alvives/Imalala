@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-        System.out.println("Bienvenido a Imalala SA, la mejor agencia de viajes");
+        System.out.println("Bienvenido a Imalala SA, la mejor agencia de viaje");
         ListaUsuarios listaUsuarios = new ListaUsuarios();
         listaUsuarios.anadirUsuario(new Usuario());
         
@@ -12,10 +12,10 @@ public class Main {
         Scanner in = new Scanner(System.in);
         String s = in.nextLine();
         if(listaUsuarios.buscarUsuario(s)) {
-        	System.out.println("Id correcto, introduzca su contraseña");
+        	System.out.println("Id correcto, introduzca su contraseï¿½a");
         	String c = in.nextLine();
         	if(listaUsuarios.buscarUsuarioContrasena(s, c)) {
-            	System.out.println("Contraseña correcta, bienvenido");
+            	System.out.println("Contraseï¿½a correcta, bienvenido");
         	} else {
         		System.out.println("contrasena incorrecta");
         	}
