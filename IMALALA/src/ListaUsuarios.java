@@ -53,4 +53,18 @@ public class ListaUsuarios {
 		return b;
 
 	}
+
+	public void modificarDatosUsuario (String id, String nuevoId, String contrasena, String tlf) {
+		boolean b = false;
+		int i = 0;
+		while (!b && i < listaUsuarios.size()) {
+			if (listaUsuarios.get(i).getId().equals(id)) {
+				b = true;
+				listaUsuarios.get(i).setContrasena(contrasena);
+				listaUsuarios.get(i).setTelefono(tlf);
+				listaUsuarios.get(i).setID(nuevoId);
+			}
+			i++;
+		}
+	}
 }
