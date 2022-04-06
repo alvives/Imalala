@@ -15,7 +15,7 @@ public class Main {
         	System.out.println("Id correcto, introduzca su contrase�a");
         	String c = in.nextLine();
         	if(listaUsuarios.buscarUsuarioContrasena(s, c)) {
-            	System.out.println("Contrase�a correcta, bienvenido");
+            	System.out.println("Password correcta, bienvenido");
         	} else {
         		System.out.println("contrasena incorrecta");
         	}
