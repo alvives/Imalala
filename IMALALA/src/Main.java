@@ -12,12 +12,12 @@ public class Main {
         Scanner in = new Scanner(System.in);
         String s = in.nextLine();
         if(listaUsuarios.buscarUsuario(s)) {
-        	System.out.println("Id correcto, introduzca su contrasena");
+        	System.out.println("Id correcto, introduzca su password");
         	String c = in.nextLine();
         	if(listaUsuarios.buscarUsuarioContrasena(s, c)) {
             	System.out.println("Password correcta, bienvenido");
         	} else {
-        		System.out.println("contrasena incorrecta");
+        		System.out.println("Password incorrecta");
         	}
         }
         else{
