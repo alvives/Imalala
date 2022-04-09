@@ -20,7 +20,7 @@ public class Alojamiento {
 	}
 	  
 
-	  //gets
+	  
 	public String getId (){
 		return this.id;
 	}
