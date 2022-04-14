@@ -16,8 +16,8 @@ public class Viaje {
 
 	
 	
-	
+	/*
 	public int numReservasDisponibles() {
 		
-	}
+	}*/
 }

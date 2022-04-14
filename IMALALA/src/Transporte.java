@@ -6,17 +6,19 @@ public abstract class Transporte {
 	
 	
 	
-	public Transporte (String id, String capacidad) {
+	public Transporte (String id, String capacidad, double precio) {
 		this.id=id;
 		this.capacidad=capacidad;
+		this.precio = precio;
 		this.disponibilidad=true;
+
 	}
 	
 	public void setPrecio (double precio){
 	    this.precio=precio;
 	}
 	
-	public String getPrecio (){
+	public double getPrecio (){
 	    return this.precio;
 	}
 	
