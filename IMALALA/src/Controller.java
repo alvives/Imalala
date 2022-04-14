@@ -6,6 +6,8 @@ import java.awt.event.*;
 public class Controller extends JFrame {
 	
 	Model model = new Model();
+	View1 view1;
+	View2 view2;
 	
 	JScrollPane jScrollPane1 = new JScrollPane();
 	JButton jButton1 = new JButton();
@@ -72,13 +74,13 @@ public class Controller extends JFrame {
 	// Presione el botón Actualizar para notificar al Modelo que los datos han cambiado.
 	void jButton1_actionPerformed(ActionEvent e) {
 		String id = jTextField1.getText();
-		System.out.println(id);
 		String contrasena = jTextField2.getText();
-		System.out.println(contrasena);
 		if(this.model.buscarUsuarioContrasena(id, contrasena)) {
-			System.out.println("Usuario encontrado");
+			this.view1 = new View1(this.model,this.model.listaUsuarios.devolverUsuario(id, contrasena));
+			this.view1.setSize(475,410);
+			this.view1.setVisible(true);
 		} else {
-			System.out.println("Usuario no encontrado");			
+			JOptionPane.showMessageDialog(new JFrame(), "Error, usuario y contrasena no coinciden", "ERROR", JOptionPane.ERROR_MESSAGE);		
 		}
 	}
 	void jButton2_actionPerformed(ActionEvent e) {

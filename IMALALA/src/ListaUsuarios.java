@@ -67,4 +67,22 @@ public class ListaUsuarios {
 			i++;
 		}
 	}
+	
+	public Usuario devolverUsuario(String id, String cont) {
+		boolean b = false, encont = false;
+		int i = 0;
+
+		while (!encont && !b && i < listaUsuarios.size()) {
+			if (listaUsuarios.get(i).getId().equals(id)) {
+				encont=true;
+				if(listaUsuarios.get(i).getContrasena().equals(cont))
+					b = true;
+				
+			}
+			i++;
+		}
+		return listaUsuarios.get(i-1);
+
+	}
+	
 }
