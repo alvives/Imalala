@@ -1,8 +1,8 @@
 
-public class Avión extends Transporte{
+public class Avion extends Transporte{
 	
 	
-	public Avión (String id, String capacidad, double precio) {
+	public Avion (String id, String capacidad, double precio) {
 		super(id, capacidad, precio);
 	}
 
