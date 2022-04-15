@@ -2,8 +2,10 @@ import java.util.*;
 
 public class Model {
 	ListaUsuarios listaUsuarios = new ListaUsuarios();
-	Gestor gestor;
-	ListaViajes listaViajes;
+	Gestor gestor = Gestor.getSingletonInstance("gestor", "1");
+	ListaViajes listaViajes = new ListaViajes();
+	ListaReservas listaReservas = new ListaReservas();
+	ListaTransportes listaTransportes = new ListaTransportes();
 	ArrayList observer = new ArrayList();
 	
 	public Model() 	{ 
@@ -14,10 +16,26 @@ public class Model {
 		this.listaUsuarios.anadirUsuario(u);
 	}
 	
+	public void asignaGestor(Gestor g) {
+		this.gestor=g;
+	}
+	
 	public boolean buscarUsuarioContrasena(String id,String cont) {
 		return this.listaUsuarios.buscarUsuarioContrasena(id, cont);
 	}
 	
+	public void llenarListaViajes() {
+		listaViajes.llenarViajes();
+	}
+	public void llenarListaReservas() {
+		listaReservas.llenarReservas();
+	}
+	public void llenarListaUsuarios() {
+		listaUsuarios.llenarUsuarios();
+	}
+	public void llenarListaTransportes() {
+		listaTransportes.llenarTransportes();
+	}
 	// se utiliza para registrar observadores en el modelo.
 	public void registerObserver(Observer o) 	{
 		observer.add(o);

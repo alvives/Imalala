@@ -38,13 +38,13 @@ public class ListaViajes {
 		}
 	}
 	
-	public void eliminarReserva (Viaje v, Reserva r) {
+	public void eliminarReserva (Viaje v) {
 		boolean b = false;
 		int i = 0;
 		while (!b && i < listaViajes.size()) {
 			if (listaViajes.get(i).equals(v)) {
 				b = true;
-				listaViajes.get(i).eliminarReserva(r);
+				listaViajes.get(i).eliminarReserva();
 			}
 			i++;
 		}
@@ -61,5 +61,13 @@ public class ListaViajes {
 		}
 		return lista;
 	}
-	
+
+	public void llenarViajes() {
+		//listaViajes.add(new Viaje(null, null, null, 0));
+		
+	}
+	public void exportarViajes() {
+		// TODO Auto-generated method stub
+		
+	}
 }

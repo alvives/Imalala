@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class ListaUsuarios {
 
-	ArrayList<Usuario> listaUsuarios;
+	private ArrayList<Usuario> listaUsuarios;
 
 	public ListaUsuarios() {
 		listaUsuarios = new ArrayList<Usuario>();
@@ -84,5 +84,14 @@ public class ListaUsuarios {
 		return listaUsuarios.get(i-1);
 
 	}
+
+	public void llenarUsuarios() {
+		// TODO Auto-generated method stub
+		
+	}
 	
+	public void exportarUsuarios() {
+		// TODO Auto-generated method stub
+		
+	}
 }

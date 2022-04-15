@@ -34,6 +34,9 @@ public class Controller extends JFrame {
 	
 	private void jbInit() throws Exception 	{
 		model.anadirUsuario(new Usuario());
+		model.llenarListaReservas();
+		model.llenarListaUsuarios();
+		model.llenarListaViajes();
 			
 		this.getContentPane().setLayout(null);
 		jScrollPane1.setBounds(new Rectangle(0, 0, 3, 3));
