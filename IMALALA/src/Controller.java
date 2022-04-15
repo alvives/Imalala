@@ -10,7 +10,7 @@ public class Controller extends JFrame {
 	Model model = new Model();
 	View1 view1;
 	View2 view2;
-	
+	View5 view5;
 	
 	JScrollPane jScrollPane1 = new JScrollPane();
 	JButton jButton1 = new JButton();
@@ -34,9 +34,12 @@ public class Controller extends JFrame {
 	
 	private void jbInit() throws Exception 	{
 		model.anadirUsuario(new Usuario());
-		model.llenarListaReservas();
 		model.llenarListaUsuarios();
+		model.llenarListaTransportes();
+		model.llenarListaAlojamientos();
 		model.llenarListaViajes();
+		model.llenarListaReservas();
+		
 			
 		this.getContentPane().setLayout(null);
 		jScrollPane1.setBounds(new Rectangle(0, 0, 3, 3));
@@ -84,7 +87,11 @@ public class Controller extends JFrame {
 			this.view1 = new View1(this.model,this.model.listaUsuarios.devolverUsuario(id, contrasena));
 			this.view1.setSize(475,410);
 			this.view1.setVisible(true);
-		} else {
+		} else if(model.gestor.getNombre().equals(id) && model.gestor.getContrasena().equals(contrasena)){
+			this.view5 = new View5(this.model);
+			this.view5.setSize(475,410);
+			this.view5.setVisible(true);
+		}else{
 			JOptionPane.showMessageDialog(new JFrame(), "Error, usuario y contrasena no coinciden", "ERROR", JOptionPane.ERROR_MESSAGE);		
 		}
 	}

@@ -10,7 +10,7 @@ public class Alojamiento {
 	private String ciudad;
 
 	//Constructor
-	public Alojamiento(String id, String capacidad,String numHabitacion, String planta,String direccion, String nombreHotel){
+	public Alojamiento(String id, String capacidad,String numHabitacion, String planta,String direccion, String nombreHotel, String ciudad){
 	  this.id=id;
 	  this.capacidad=capacidad;
 	  this.numHabitacion=numHabitacion;

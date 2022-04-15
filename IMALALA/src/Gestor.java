@@ -33,4 +33,8 @@ public class Gestor {
 		this.eliminarGestor();
 		this.getSingletonInstance(nombre, contrasena);
 	}
+
+	public Object getContrasena() {
+		return this.contrasena;
+	}
 }

@@ -11,7 +11,7 @@ public class ListaTransportes {
 
 	public void llenarTransportes() {
 		// TODO Auto-generated method stub
-		
+		//listaTransportes.add(new Avion("1", "32"));
 	}
 	public void exportarTransportes() {
 		// TODO Auto-generated method stub

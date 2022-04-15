@@ -63,7 +63,8 @@ public class ListaViajes {
 	}
 
 	public void llenarViajes() {
-		//listaViajes.add(new Viaje(null, null, null, 0));
+		// TODO Auto-generated method stub
+		//listaViajes.add(new Viaje(null, null, 0, 0));
 		
 	}
 	public void exportarViajes() {

@@ -6,12 +6,14 @@ public class Viaje {
 	//private Gestor gestor;
 	private ArrayList<Transporte> listaTransportes;
 	private int reservasDisponibles;
+	private double precio;
 	
-	public Viaje (Alojamiento alojamiento, /*Gestor gestor,*/ ArrayList<Transporte> listaTransportes, int reservasMax) {
+	public Viaje (Alojamiento alojamiento, /*Gestor gestor,*/ ArrayList<Transporte> listaTransportes, int reservasMax, double precio) {
 		this.alojamiento=alojamiento;
 		//this.gestor=gestor;
 		this.listaTransportes=listaTransportes;
 		this.reservasDisponibles=reservasMax;
+		this.setPrecio(precio);
 	}
 
 	
@@ -47,6 +49,18 @@ public class Viaje {
 	
 	public void eliminarReserva() {
 		this.reservasDisponibles--;
+	}
+
+
+
+	public double getPrecio() {
+		return precio;
+	}
+
+
+
+	public void setPrecio(double precio) {
+		this.precio = precio;
 	}
 	
 }

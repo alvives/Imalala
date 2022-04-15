@@ -6,6 +6,8 @@ public class Model {
 	ListaViajes listaViajes = new ListaViajes();
 	ListaReservas listaReservas = new ListaReservas();
 	ListaTransportes listaTransportes = new ListaTransportes();
+	ListaAlojamientos listaAlojamientos = new ListaAlojamientos();
+
 	ArrayList observer = new ArrayList();
 	
 	public Model() 	{ 
@@ -35,6 +37,9 @@ public class Model {
 	}
 	public void llenarListaTransportes() {
 		listaTransportes.llenarTransportes();
+	}
+	public void llenarListaAlojamientos() {
+		listaAlojamientos.llenarAlojamientos();
 	}
 	// se utiliza para registrar observadores en el modelo.
 	public void registerObserver(Observer o) 	{
