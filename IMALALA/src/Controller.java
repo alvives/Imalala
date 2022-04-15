@@ -61,7 +61,7 @@ public class Controller extends JFrame {
 		jLabel2.setBounds(new Rectangle(42, 52, 35, 33));
 		jLabel3.setText("Contrasena:");
 		jLabel3.setBounds(new Rectangle(42, 100, 80, 31));
-		jLabel4.setText("Pulse el siguiente bot�n si quiere registrarse:");
+		jLabel4.setText("Pulse el siguiente boton si quiere registrarse:");
 		jLabel4.setBounds(new Rectangle(42, 200, 300, 27));
 		this.getContentPane().add(jScrollPane1, null);
 		this.getContentPane().add(jTextField2, null);
@@ -74,7 +74,6 @@ public class Controller extends JFrame {
 		this.getContentPane().add(jButton2, null);
 	}
 	
-	// Presione el bot�n Actualizar para notificar al Modelo que los datos han cambiado.
 	void jButton1_actionPerformed(ActionEvent e) {
 		String id = jTextField1.getText();
 		String contrasena = jTextField2.getText();
@@ -87,7 +86,9 @@ public class Controller extends JFrame {
 		}
 	}
 	void jButton2_actionPerformed(ActionEvent e) {
-		
+		this.view2 = new View2(this.model);
+		this.view2.setSize(475,410);
+		this.view2.setVisible(true);
 	}
 	public static void main(String[] args){
 		Controller c = new Controller();
