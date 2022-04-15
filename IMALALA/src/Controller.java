@@ -11,6 +11,7 @@ public class Controller extends JFrame {
 	View1 view1;
 	View2 view2;
 	
+	
 	JScrollPane jScrollPane1 = new JScrollPane();
 	JButton jButton1 = new JButton();
 	JButton jButton2 = new JButton();
