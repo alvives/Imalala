@@ -2,6 +2,8 @@ import java.util.*;
 
 public class Model {
 	ListaUsuarios listaUsuarios = new ListaUsuarios();
+	Gestor gestor;
+	ListaViajes listaViajes;
 	ArrayList observer = new ArrayList();
 	
 	public Model() 	{ 

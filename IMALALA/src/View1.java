@@ -10,6 +10,9 @@ public class View1 extends JFrame implements Observer {
 	Model model;
 	Usuario u;
 	
+	View3 view3;
+	View4 view4;
+	
 	JScrollPane jScrollPane1 = new JScrollPane();	
 	JLabel jLabel1 = new JLabel();
 	JButton jButton1 = new JButton();
@@ -87,11 +90,15 @@ public class View1 extends JFrame implements Observer {
 	}
 
 	void jButton1_actionPerformed(ActionEvent e) {
-		
+		this.view3 = new View3(this.model, this.u);
+		this.view3.setSize(475,410);
+		this.view3.setVisible(true);
 	}
 	
 	void jButton2_actionPerformed(ActionEvent e) {
-		
+		this.view4 = new View4(this.model, this.u);
+		this.view4.setSize(475,410);
+		this.view4.setVisible(true);
 	}
 	
 	void jButton3_actionPerformed(ActionEvent e) {

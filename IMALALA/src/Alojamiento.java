@@ -7,7 +7,7 @@ public class Alojamiento {
 	private String planta;
 	private String direccion;
 	private String nombreHotel;
-
+	private String ciudad;
 
 	//Constructor
 	public Alojamiento(String id, String capacidad,String numHabitacion, String planta,String direccion, String nombreHotel){
@@ -15,6 +15,7 @@ public class Alojamiento {
 	  this.capacidad=capacidad;
 	  this.numHabitacion=numHabitacion;
 	  this.planta=planta;
+	  this.ciudad=ciudad;
 	  this.direccion=direccion;
 	  this.nombreHotel=nombreHotel;
 	}
@@ -24,7 +25,11 @@ public class Alojamiento {
 	public String getId (){
 		return this.id;
 	}
-
+	
+	public String getCiudad (){
+		return this.ciudad;
+	}
+	
     public void setID(String id){
     	this.id=id;
 	}
@@ -39,6 +44,9 @@ public class Alojamiento {
 		this.capacidad = capacidad;
 	}
 
+	public void setCiudad(String ciudad) {
+		this.ciudad = ciudad;
+	}
 
 	public String getNumHabitacion() {
 		return numHabitacion;
