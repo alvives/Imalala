@@ -25,14 +25,15 @@ public class ListaViajes {
 		}
 	}
 	
-	public void modificarViaje (Viaje v, Alojamiento alojammiento, ArrayList<Transporte> listaTransportes) {
+	public void modificarViaje (Viaje v, Alojamiento alojammiento, Transporte transporteIda, Transporte transporteVuelta) {
 		boolean b = false;
 		int i = 0;
 		while (!b && i < listaViajes.size()) {
 			if (listaViajes.get(i).equals(v)) {
 				b = true;
 				listaViajes.get(i).setAlojamiento(alojammiento);
-				listaViajes.get(i).setListaTransportes(listaTransportes);
+				listaViajes.get(i).setTransporteIda(transporteIda);
+				listaViajes.get(i).setTransporteVuelta(transporteVuelta);				
 			}
 			i++;
 		}
