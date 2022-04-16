@@ -1,12 +1,12 @@
 import java.util.*;
 
 public class Model {
-	
-	String ruta="D:\\WorkspaceEclipse\\IMALALA";
-	ListaUsuarios listaUsuarios = new ListaUsuarios(ruta);
+	String ruta="C:\\Users\\Usuario\\eclipse-workspace\\Imalala SA";
 	Gestor gestor = Gestor.getSingletonInstance("gestor", "1");
-	ListaViajes listaViajes = new ListaViajes(ruta);
+	
+	ListaUsuarios listaUsuarios = new ListaUsuarios(ruta);
 	ListaReservas listaReservas = new ListaReservas(ruta);
+	ListaViajes listaViajes = new ListaViajes(ruta);
 	ListaTransportes listaTransportes = new ListaTransportes(ruta);
 	ListaAlojamientos listaAlojamientos = new ListaAlojamientos(ruta);
 
@@ -28,11 +28,14 @@ public class Model {
 		return this.listaUsuarios.buscarUsuarioContrasena(id, cont);
 	}
 	
-	public void llenarListaViajes(ListaAlojamientos listaAlojamientos2,ListaTransportes listaTransportes2) {
-		listaViajes.llenarViajes(listaAlojamientos2,listaTransportes2);
+	
+	//METODOS DE LLENAR LISTAS
+	
+	public void llenarListaViajes(ListaAlojamientos listaAlojamientos,ListaTransportes listaTransportes) {
+		listaViajes.llenarViajes(listaAlojamientos,listaTransportes);
 	}
-	public void llenarListaReservas() {
-		listaReservas.llenarReservas();
+	public void llenarListaReservas(ListaUsuarios listaUsuarios, ListaViajes listaViajes) {
+		listaReservas.llenarReservas(listaUsuarios, listaViajes);
 	}
 	public void llenarListaUsuarios() {
 		listaUsuarios.llenarUsuarios();
@@ -43,6 +46,11 @@ public class Model {
 	public void llenarListaAlojamientos() {
 		listaAlojamientos.llenarAlojamientos();
 	}
+	
+	
+	
+	
+	
 	// se utiliza para registrar observadores en el modelo.
 	public void registerObserver(Observer o) 	{
 		observer.add(o);

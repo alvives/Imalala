@@ -70,25 +70,23 @@ public class ListaViajes {
 		return lista;
 	}
 
-	public void llenarViajes(ListaAlojamientos listaAlojamientos2,ListaTransportes listaTransportes2) {
-
-		File doc = new File(ruta+"\\Viajes.txt");
+	public void llenarViajes(ListaAlojamientos listaAlojamientos,ListaTransportes listaTransportes) {
+		File doc = new File(ruta+"\\Viajes.txt");	
 		Scanner obj;
+		
 		try {
 			obj = new Scanner(doc);
 			while (obj.hasNextLine()){
 				String linea = obj.nextLine();
 				String[] partes = linea.split("-");
-				listaViajes.add(new Viaje(partes[0],listaAlojamientos2.buscarAlojamiento(partes[1]),
-						listaTransportes2.buscarTransporte(partes[2]),listaTransportes2.buscarTransporte(partes[3]),
-						Integer. parseInt(partes[4]),Double.parseDouble(partes[5])));
+				listaViajes.add(new Viaje(partes[0], listaAlojamientos.buscarAlojamiento(partes[1]),
+						listaTransportes.buscarTransporte(partes[2]),listaTransportes.buscarTransporte(partes[3]),
+						Integer.parseInt(partes[4]),Double.parseDouble(partes[5])));
 			}
 			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-		}
-		
-		
+		}	
 	}
 	public void exportarViajes() {
 
@@ -117,4 +115,21 @@ public class ListaViajes {
 		}
 		
 	}
+	
+	
+	
+	public Viaje buscarViaje(String id) {
+
+		boolean encont = false;
+		int i = 0;
+
+		while (!encont && i < listaViajes.size()) {
+			if (listaViajes.get(i).getId().equals(id)) {
+				encont=true;
+			}
+			i++;
+		}
+		return (listaViajes.get(i-1));
+	}
+	
 }

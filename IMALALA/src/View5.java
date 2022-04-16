@@ -73,11 +73,11 @@ public class View5 extends JFrame implements Observer {
 	}
 	
 	void jButton2_actionPerformed(ActionEvent e) {
-	
+
 	}
 	
 	void jButton3_actionPerformed(ActionEvent e) {
-		
+
 	}
 
 	

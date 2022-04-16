@@ -38,7 +38,7 @@ public class Controller extends JFrame {
 		model.llenarListaTransportes();
 		model.llenarListaAlojamientos();
 		model.llenarListaViajes(this.model.listaAlojamientos,this.model.listaTransportes);
-		model.llenarListaReservas();
+		model.llenarListaReservas(this.model.listaUsuarios, this.model.listaViajes);
 		
 			
 		this.getContentPane().setLayout(null);

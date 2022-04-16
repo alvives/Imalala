@@ -8,17 +8,17 @@ public class Viaje {
 	private Transporte transporteIda;
 	private Transporte transporteVuelta;
 	private int reservasDisponibles;
-	private double precio;
+	private Double precio;
 	private String id;
 	
-	public Viaje (String id,Alojamiento alojamiento, Transporte transporteIda, Transporte transporteVuelta,/*Gestor gestor, ArrayList<Transporte> listaTransportes,*/ int reservasMax, double precio) {
+	public Viaje (String id,Alojamiento alojamiento, Transporte transporteIda, Transporte transporteVuelta,/*Gestor gestor, ArrayList<Transporte> listaTransportes,*/ int reservasDisponibles, double precio) {
 		this.setId(id);
 		this.alojamiento=alojamiento;
 		//this.gestor=gestor;
 		//this.listaTransportes=listaTransportes;
 		this.setTransporteIda(transporteIda);
 		this.setTransporteVuelta(transporteVuelta);
-		this.reservasDisponibles=reservasMax;
+		this.reservasDisponibles = reservasDisponibles;
 		this.setPrecio(precio);
 	}
 

@@ -14,17 +14,17 @@ public class ListaUsuarios {
 
 	}
 
-	public boolean buscarUsuario(String id) {
-		boolean b = false;
+	public Usuario buscarUsuario(String id) {
+		boolean encont = false;
 		int i = 0;
 
-		while (!b && i < listaUsuarios.size()) {
+		while (!encont && i < listaUsuarios.size()) {
 			if (listaUsuarios.get(i).getId().equals(id)) {
-				b = true;
+				encont=true;
 			}
 			i++;
 		}
-		return b;
+		return (listaUsuarios.get(i-1));
 	}
 
 	public void darBajaUsuario(String id) {

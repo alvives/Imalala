@@ -1,4 +1,7 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class ListaReservas {
 
@@ -39,9 +42,21 @@ public class ListaReservas {
 		return lista;
 	}
 
-	public void llenarReservas() {
-		// TODO Auto-generated method stub
+	public void llenarReservas(ListaUsuarios listaUsuarios, ListaViajes listaViajes) {
+		File doc = new File(ruta+"\\Viajes.txt");	
+		Scanner obj;
 		
+		try {
+			obj = new Scanner(doc);
+			while (obj.hasNextLine()){
+				String linea = obj.nextLine();
+				String[] partes = linea.split("-");
+				listaReservas.add(new Reserva(listaUsuarios.buscarUsuario(partes[0]), listaViajes.buscarViaje(partes[1]), Boolean.parseBoolean(partes[2])));
+			}
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}	
 	}
 	
 	public void exportarReservas() {
