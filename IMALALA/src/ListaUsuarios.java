@@ -1,11 +1,16 @@
+import java.io.*;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class ListaUsuarios {
 
 	private ArrayList<Usuario> listaUsuarios;
+	private String ruta;
 
-	public ListaUsuarios() {
+	public ListaUsuarios(String ruta) {
 		listaUsuarios = new ArrayList<Usuario>();
+		this.ruta=ruta;
 
 	}
 
@@ -86,12 +91,48 @@ public class ListaUsuarios {
 	}
 
 	public void llenarUsuarios() {
-		// TODO Auto-generated method stub
+		
+		File doc = new File(ruta+"\\Usuarios.txt");
+		Scanner obj;
+		try {
+			obj = new Scanner(doc);
+			while (obj.hasNextLine()){
+				String linea = obj.nextLine();
+				String[] partes = linea.split("-");
+				listaUsuarios.add(new Usuario(partes[0],partes[1],partes[2],partes[3],partes[4],partes[5]));
+			}
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
 		
 	}
 	
 	public void exportarUsuarios() {
-		// TODO Auto-generated method stub
-		
+
+		FileWriter fichero = null;
+		PrintWriter pw = null;
+		try {
+			fichero = new FileWriter(ruta+"\\Usuarios.txt");
+			pw = new PrintWriter(fichero);
+			
+			//escribir con pw.println();
+			for (int z=0;z<this.listaUsuarios.size();z++) {
+				pw.println(listaUsuarios.get(z).getId()+"-"+listaUsuarios.get(z).getContrasena()+"-"+
+						listaUsuarios.get(z).getNombre()+"-"+listaUsuarios.get(z).getApellido()+"-"+
+						listaUsuarios.get(z).getTlf()+"-"+listaUsuarios.get(z).getDni());
+			}
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if (null!=fichero)
+					fichero.close();
+			}catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
 	}
 }

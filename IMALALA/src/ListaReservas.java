@@ -3,9 +3,10 @@ import java.util.ArrayList;
 public class ListaReservas {
 
 	private ArrayList<Reserva> listaReservas;
-
-	public ListaReservas() {
+	private String ruta;
+	public ListaReservas(String ruta) {
 		listaReservas = new ArrayList<Reserva>();
+		this.ruta=ruta;
 
 	}
 

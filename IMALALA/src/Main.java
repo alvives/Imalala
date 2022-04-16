@@ -7,7 +7,7 @@ public class Main {
 
 	public static void main(String[] args) {
         System.out.println("Bienvenido a Imalala SA, la mejor agencia de viajes");
-        ListaUsuarios listaUsuarios = new ListaUsuarios();
+        ListaUsuarios listaUsuarios = new ListaUsuarios("");
         listaUsuarios.anadirUsuario(new Usuario());
         /*
         System.out.println("Introduzca su id de usuario");

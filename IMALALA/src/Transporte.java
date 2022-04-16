@@ -6,7 +6,7 @@ public abstract class Transporte {
 	
 	
 	public Transporte (String id, String capacidad) {
-		this.id=id;
+		this.setId(id);
 		this.capacidad=capacidad;
 		this.disponibilidad=true;
 
@@ -34,5 +34,15 @@ public abstract class Transporte {
 	}
 
 	public abstract String getTipoTransporte();
+
+
+	public String getId() {
+		return id;
+	}
+
+
+	public void setId(String id) {
+		this.id = id;
+	}
 
 }

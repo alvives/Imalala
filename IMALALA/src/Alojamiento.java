@@ -3,18 +3,14 @@ public class Alojamiento {
 	//Variables
 	private String id;
 	private String capacidad;
-	private String numHabitacion;
-	private String planta;
 	private String direccion;
 	private String nombreHotel;
 	private String ciudad;
 
 	//Constructor
-	public Alojamiento(String id, String capacidad,String numHabitacion, String planta,String direccion, String nombreHotel, String ciudad){
+	public Alojamiento(String id, String capacidad, String direccion, String nombreHotel, String ciudad){
 	  this.id=id;
 	  this.capacidad=capacidad;
-	  this.numHabitacion=numHabitacion;
-	  this.planta=planta;
 	  this.ciudad=ciudad;
 	  this.direccion=direccion;
 	  this.nombreHotel=nombreHotel;
@@ -48,24 +44,10 @@ public class Alojamiento {
 		this.ciudad = ciudad;
 	}
 
-	public String getNumHabitacion() {
-		return numHabitacion;
-	}
+	
 
 
-	public void setNumHabitacion(String numHabitacion) {
-		this.numHabitacion = numHabitacion;
-	}
 
-
-	public String getPlanta() {
-		return planta;
-	}
-
-
-	public void setPlanta(String planta) {
-		this.planta = planta;
-	}
 
 
 	public String getDireccion() {

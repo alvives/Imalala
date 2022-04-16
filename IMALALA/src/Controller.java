@@ -15,6 +15,7 @@ public class Controller extends JFrame {
 	JScrollPane jScrollPane1 = new JScrollPane();
 	JButton jButton1 = new JButton();
 	JButton jButton2 = new JButton();
+	JButton jButton3 = new JButton();
 	JTextField jTextField1 = new JTextField();
 	JTextField jTextField2 = new JTextField();
 	JLabel jLabel1 = new JLabel();
@@ -33,11 +34,10 @@ public class Controller extends JFrame {
 	}
 	
 	private void jbInit() throws Exception 	{
-		model.anadirUsuario(new Usuario());
 		model.llenarListaUsuarios();
 		model.llenarListaTransportes();
 		model.llenarListaAlojamientos();
-		model.llenarListaViajes();
+		model.llenarListaViajes(this.model.listaAlojamientos,this.model.listaTransportes);
 		model.llenarListaReservas();
 		
 			
@@ -55,6 +55,13 @@ public class Controller extends JFrame {
 		jButton2.addActionListener(new java.awt.event.ActionListener() 	{
 			public void actionPerformed(ActionEvent e)  {
 				jButton2_actionPerformed(e);
+			}
+		});
+		jButton3.setBounds(new Rectangle(150, 300, 150, 27));
+		jButton3.setText("Guardar cambios");
+		jButton3.addActionListener(new java.awt.event.ActionListener() 	{
+			public void actionPerformed(ActionEvent e)  {
+				jButton3_actionPerformed(e);
 			}
 		});
 		jTextField1.setText("");
@@ -78,6 +85,7 @@ public class Controller extends JFrame {
 		this.getContentPane().add(jLabel4, null);
 		this.getContentPane().add(jButton1, null);
 		this.getContentPane().add(jButton2, null);
+		this.getContentPane().add(jButton3, null);
 	}
 	
 	void jButton1_actionPerformed(ActionEvent e) {
@@ -99,6 +107,13 @@ public class Controller extends JFrame {
 		this.view2 = new View2(this.model);
 		this.view2.setSize(475,410);
 		this.view2.setVisible(true);
+	}
+	void jButton3_actionPerformed(ActionEvent e) {
+		this.model.listaUsuarios.exportarUsuarios();
+		this.model.listaTransportes.exportarTransportes();
+		this.model.listaAlojamientos.exportarAlojamientos();;
+		this.model.listaViajes.exportarViajes();;
+		this.model.listaReservas.exportarReservas();;
 	}
 	public static void main(String[] args){
 		Controller c = new Controller();

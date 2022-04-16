@@ -1,12 +1,19 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 
 public class ListaViajes {
 	private ArrayList<Viaje> listaViajes;
+	private String ruta;
 	
 	
-	public ListaViajes () {
+	public ListaViajes (String ruta) {
 		listaViajes = new ArrayList<Viaje>();
+		this.ruta=ruta;
 	}
 	
 	public void insertarViaje(Viaje v) {
@@ -63,13 +70,51 @@ public class ListaViajes {
 		return lista;
 	}
 
-	public void llenarViajes() {
-		// TODO Auto-generated method stub
-		//listaViajes.add(new Viaje(null, null, 0, 0));
+	public void llenarViajes(ListaAlojamientos listaAlojamientos2,ListaTransportes listaTransportes2) {
+
+		File doc = new File(ruta+"\\Viajes.txt");
+		Scanner obj;
+		try {
+			obj = new Scanner(doc);
+			while (obj.hasNextLine()){
+				String linea = obj.nextLine();
+				String[] partes = linea.split("-");
+				listaViajes.add(new Viaje(partes[0],listaAlojamientos2.buscarAlojamiento(partes[1]),
+						listaTransportes2.buscarTransporte(partes[2]),listaTransportes2.buscarTransporte(partes[3]),
+						Integer. parseInt(partes[4]),Double.parseDouble(partes[5])));
+			}
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
 		
 	}
 	public void exportarViajes() {
-		// TODO Auto-generated method stub
+
+		FileWriter fichero = null;
+		PrintWriter pw = null;
+		try {
+			fichero = new FileWriter(ruta+"\\Viajes.txt");
+			pw = new PrintWriter(fichero);
+			
+			//escribir con pw.println();
+			for (int z=0;z<this.listaViajes.size();z++) {
+				pw.println(listaViajes.get(z).getId()+"-"+listaViajes.get(z).getAlojamiento().getId()+"-"+
+						listaViajes.get(z).getTransporteIda().getId()+"-"+listaViajes.get(z).getTransporteVuelta().getId()+"-"+
+						listaViajes.get(z).getReservasDisponibles()+"-"+listaViajes.get(z).getPrecio());
+			}
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if (null!=fichero)
+					fichero.close();
+			}catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
 		
 	}
 }

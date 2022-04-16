@@ -1,12 +1,14 @@
 import java.util.*;
 
 public class Model {
-	ListaUsuarios listaUsuarios = new ListaUsuarios();
+	
+	String ruta="D:\\WorkspaceEclipse\\IMALALA";
+	ListaUsuarios listaUsuarios = new ListaUsuarios(ruta);
 	Gestor gestor = Gestor.getSingletonInstance("gestor", "1");
-	ListaViajes listaViajes = new ListaViajes();
-	ListaReservas listaReservas = new ListaReservas();
-	ListaTransportes listaTransportes = new ListaTransportes();
-	ListaAlojamientos listaAlojamientos = new ListaAlojamientos();
+	ListaViajes listaViajes = new ListaViajes(ruta);
+	ListaReservas listaReservas = new ListaReservas(ruta);
+	ListaTransportes listaTransportes = new ListaTransportes(ruta);
+	ListaAlojamientos listaAlojamientos = new ListaAlojamientos(ruta);
 
 	ArrayList observer = new ArrayList();
 	
@@ -26,8 +28,8 @@ public class Model {
 		return this.listaUsuarios.buscarUsuarioContrasena(id, cont);
 	}
 	
-	public void llenarListaViajes() {
-		listaViajes.llenarViajes();
+	public void llenarListaViajes(ListaAlojamientos listaAlojamientos2,ListaTransportes listaTransportes2) {
+		listaViajes.llenarViajes(listaAlojamientos2,listaTransportes2);
 	}
 	public void llenarListaReservas() {
 		listaReservas.llenarReservas();
