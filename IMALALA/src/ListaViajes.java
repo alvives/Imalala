@@ -70,6 +70,20 @@ public class ListaViajes {
 		return lista;
 	}
 
+	public ArrayList<Viaje> getViajes() {
+
+		ArrayList<Viaje> lista = new ArrayList<Viaje>();
+		int i = 0;
+		while (i < listaViajes.size()) {
+
+			lista.add(listaViajes.get(i));
+			
+			i++;
+		}
+		
+		return lista;
+	}
+
 	public void llenarViajes(ListaAlojamientos listaAlojamientos,ListaTransportes listaTransportes) {
 		File doc = new File(ruta+"\\Viajes.txt");	
 		Scanner obj;
@@ -88,6 +102,7 @@ public class ListaViajes {
 			e.printStackTrace();
 		}	
 	}
+
 	public void exportarViajes() {
 
 		FileWriter fichero = null;
