@@ -31,12 +31,22 @@ public class View7 extends JFrame implements Observer {
 		this.getContentPane().setLayout(null);
 		jScrollPane1.setBounds(new Rectangle(0, 0, 3, 3));
 		
-        
-		jLabel1.setText("Seleccione el viaje que quiere cancelar");
+        ArrayList<Reserva> listaReservas = model.listaReservas.getReservasUsuario(u);
+
+		jLabel1.setText("Aqui tienes un listado con tus reservas, selecciona la reserva que quieres cancelar " + this.u.getNombre() + " " + this.u.getApellido() + ":");
 		jLabel1.setBounds(new Rectangle(41, 15, 400, 23));
 		
+		int y=0;
+		for (int z=0;z<listaReservas.size();z++) {
+			listajLabel.add(new JLabel());
+			listajLabel.get(z).setText("Reserva: "+ listaReservas.get(z).getId() + " (" + listaReservas.get(z).getViaje().getAlojamiento().getCiudad() + ")");
+			listajLabel.get(z).setBounds(new Rectangle(41, 65+y, 400, 23));
+			y+=50;
+			this.getContentPane().add(listajLabel.get(z), null);
+		}
+		
         this.getContentPane().add(jLabel1, null);
-        
+		
 	}
 
 	

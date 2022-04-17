@@ -11,6 +11,8 @@ public class View6 extends JFrame implements Observer {
 	
 	JScrollPane jScrollPane1 = new JScrollPane();	
 	JLabel jLabel1 = new JLabel();
+    JLabel jLabel2 = new JLabel();
+    JButton jButton1 = new JButton();
 	ArrayList<JLabel> listajLabel = new ArrayList<JLabel>();
 	
 	public View6() 	{
@@ -45,15 +47,41 @@ public class View6 extends JFrame implements Observer {
 			listajLabel.get(z).setText("Viaje: "+ listaViajes.get(z).getId() + listaViajes.get(z).getAlojamiento() + listaViajes.get(z).getTransporteIda() + listaViajes.get(z).getTransporteVuelta()  + listaViajes.get(z).getPrecio());
 			listajLabel.get(z).setBounds(new Rectangle(41, 65+y, 400, 23));
 
+            jButton1.setBounds(new Rectangle(42, 52, 300, 27));
+		    jButton1.setText("Reservar");
+
+		    jButton1.addActionListener(new java.awt.event.ActionListener() 	{
+
+			public void actionPerformed(ActionEvent e)  {
+				
+                
+			}
+
+		    });
+
 			y+=50;
             this.getContentPane().add(listajLabel.get(z), null);
-        }
+
+            }
 		}
+
+        if(listaViajes.size() == 0){
+
+            jLabel2.setText("No hay viajes disponibles en este momento");
+		    jLabel2.setBounds(new Rectangle(41, 15, 400, 23));
+
+        }
 		
         this.getContentPane().add(jLabel1, null);
-
+        this.getContentPane().add(jLabel2, null);
 	}
 
+    void jButton1_actionPerformed(ActionEvent e) {
+
+
+		
+	}
+	
 	
 	@Override
 	public void dataUpdate(Model model) {
