@@ -74,8 +74,8 @@ public class ListaReservas {
 			
 			//escribir con pw.println();
 			for (int z=0;z<this.listaReservas.size();z++) {
-				pw.println(listaReservas.get(z).getId()+"-"+listaReservas.get(z).getUsuario()+"-"+
-						listaReservas.get(z).getViaje()+"-"+String.valueOf(listaReservas.get(z).getExtraPosibilidadCancelacion()));
+				pw.println(listaReservas.get(z).getId()+"-"+listaReservas.get(z).getUsuario().getId()+"-"+
+						listaReservas.get(z).getViaje().getId()+"-"+String.valueOf(listaReservas.get(z).getExtraPosibilidadCancelacion()));
 			}
 			
 		}catch (Exception e) {
