@@ -1,4 +1,4 @@
-import static org.junit.jupiter.api.Assertions.*;
+/*import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 public class Test1 {
@@ -7,7 +7,7 @@ public class Test1 {
 	public void test1() {
 		
 		assertEquals(Gestor.getSingletonInstance("gestor1", "1").getNombre(),"gestor1");
-		assertEquals(Gestor.getSingletonInstance("gestor2", "2").getNombre(),"gestor1","No se debería de haber creado, porque ya existía un gestor");
+		assertEquals(Gestor.getSingletonInstance("gestor2", "2").getNombre(),"gestor1","No se deberï¿½a de haber creado, porque ya existï¿½a un gestor");
 		
 	}
 
@@ -17,4 +17,4 @@ public class Test1 {
 		
 		
 	}
-}
+}*/
