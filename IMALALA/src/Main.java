@@ -73,7 +73,10 @@ public class Main {
                 System.err.println("Fail to connect database =( ! ");
                 System.err.println(e.getMessage());
         }
-
+        
+        Controller c = new Controller();
+		c.setSize(475,410);
+		c.setVisible(true);
 
 
 	}

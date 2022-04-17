@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Model {
-	String ruta="C:\\Users\\Usuario\\eclipse-workspace\\Imalala SA";
+	String ruta="IMALALA\\Base_Datos\\";
 	Gestor gestor = Gestor.getSingletonInstance("gestor", "1");
 	
 	ListaUsuarios listaUsuarios = new ListaUsuarios(ruta);

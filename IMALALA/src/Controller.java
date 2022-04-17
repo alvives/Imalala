@@ -115,10 +115,5 @@ public class Controller extends JFrame {
 		this.model.listaViajes.exportarViajes();;
 		this.model.listaReservas.exportarReservas();;
 	}
-	public static void main(String[] args){
-		Controller c = new Controller();
-		c.setSize(475,410);
-		c.setVisible(true);
-		
-	}
+
 }

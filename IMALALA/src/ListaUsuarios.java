@@ -1,5 +1,4 @@
 import java.io.*;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -109,9 +108,11 @@ public class ListaUsuarios {
 
 	public void llenarUsuarios() {
 		
-		File doc = new File(ruta+"\\Usuarios.txt");
+		//File doc = new File("Usuarios.txt");
+		
 		Scanner obj;
 		try {
+			FileInputStream doc = new FileInputStream(ruta+"\\Usuarios.txt");
 			obj = new Scanner(doc);
 			while (obj.hasNextLine()){
 				String linea = obj.nextLine();
