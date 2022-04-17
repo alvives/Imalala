@@ -12,8 +12,9 @@ public class View6 extends JFrame implements Observer {
 	JScrollPane jScrollPane1 = new JScrollPane();	
 	JLabel jLabel1 = new JLabel();
     JLabel jLabel2 = new JLabel();
-    JButton jButton1 = new JButton();
+
 	ArrayList<JLabel> listajLabel = new ArrayList<JLabel>();
+    ArrayList<JButton> listajButton = new ArrayList<JButton>();
 	
 	public View6() 	{
 	}
@@ -43,25 +44,32 @@ public class View6 extends JFrame implements Observer {
 		for (int z=0;z<listaViajes.size();z++) {
 
             if(listaViajes.get(z).getReservasDisponibles() != 0){
+
             listajLabel.add(new JLabel());
-			listajLabel.get(z).setText("Viaje: "+ listaViajes.get(z).getId() + listaViajes.get(z).getAlojamiento() + listaViajes.get(z).getTransporteIda() + listaViajes.get(z).getTransporteVuelta()  + listaViajes.get(z).getPrecio());
+			listajLabel.get(z).setText("Viaje: "+ listaViajes.get(z).getAlojamiento().getCiudad() + " " + listaViajes.get(z).getTransporteIda().getTipoTransporte()+ " " 
+            + listaViajes.get(z).getTransporteVuelta().getTipoTransporte() + " " + listaViajes.get(z).getPrecio());
+
 			listajLabel.get(z).setBounds(new Rectangle(41, 65+y, 400, 23));
 
-            jButton1.setBounds(new Rectangle(42, 52, 300, 27));
-		    jButton1.setText("Reservar");
+            listajButton.add(new JButton());
+            listajButton.get(z).setBounds(new Rectangle(300, 65+y, 100, 27));
+		    listajButton.get(z).setText("Reservar");
 
-		    jButton1.addActionListener(new java.awt.event.ActionListener() 	{
+		    listajButton.get(z).addActionListener(new java.awt.event.ActionListener() 	{
 
 			public void actionPerformed(ActionEvent e)  {
 				
                 
+
+
 			}
 
 		    });
 
 			y+=50;
-            this.getContentPane().add(listajLabel.get(z), null);
 
+            this.getContentPane().add(listajLabel.get(z), null);
+            this.getContentPane().add(listajButton.get(z), null);
             }
 		}
 
