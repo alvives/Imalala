@@ -11,12 +11,14 @@ import javax.swing.JScrollPane;
 
 import control.Model;
 import control.Observer;
+import model.Reserva;
 import model.Usuario;
 import model.Viaje;
 
 public class View6 extends JFrame implements Observer {
 	Model model;
 	Usuario u;
+	int x=0;
 	
 	
 	JScrollPane jScrollPane1 = new JScrollPane();	
@@ -52,7 +54,7 @@ public class View6 extends JFrame implements Observer {
 
 	
 		for (int z=0;z<listaViajes.size();z++) {
-
+			
             if(listaViajes.get(z).getReservasDisponibles() != 0){
 
             listajLabel.add(new JLabel());
@@ -69,8 +71,10 @@ public class View6 extends JFrame implements Observer {
 
 			public void actionPerformed(ActionEvent e)  {
 				
-                
-
+                int num = model.getListaReservas().getListaReservas().size()+1;
+						
+				model.getListaReservas().anadeReserva(new Reserva("reserva"+ num, u, listaViajes.get(x),false));
+	
 
 			}
 

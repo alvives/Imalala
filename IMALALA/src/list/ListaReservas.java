@@ -1,4 +1,5 @@
 package list;
+import java.awt.Component;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -89,5 +90,12 @@ public class ListaReservas {
 			}
 		}
 	}
+
+	public ArrayList<Reserva> getListaReservas() {
+		return listaReservas;
+	}
+
+	
+
 	
 }
