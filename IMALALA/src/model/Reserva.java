@@ -8,10 +8,11 @@ public class Reserva {
 	private boolean extraPosibilidadCancelacion;
 	
 	public Reserva(String id, Usuario u, Viaje v, boolean b) {
-		this.setId(id);
-		this.setUsuario(u);
-		this.setViaje(v);
-		this.setExtraPosibilidadCancelacion(b);
+
+		this.id = id;
+		this.usuario = u;
+		this.viaje = v;
+		this.extraPosibilidadCancelacion = b;
 	}
 
 	
