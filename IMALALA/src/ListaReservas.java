@@ -1,5 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -51,7 +53,7 @@ public class ListaReservas {
 			while (obj.hasNextLine()){
 				String linea = obj.nextLine();
 				String[] partes = linea.split("-");
-				listaReservas.add(new Reserva(listaUsuarios.buscarUsuario(partes[0]), listaViajes.buscarViaje(partes[1]), Boolean.parseBoolean(partes[2])));
+				listaReservas.add(new Reserva(partes[0], listaUsuarios.buscarUsuario(partes[1]), listaViajes.buscarViaje(partes[2]), Boolean.parseBoolean(partes[3])));
 			}
 			
 		} catch (FileNotFoundException e) {
@@ -60,8 +62,28 @@ public class ListaReservas {
 	}
 	
 	public void exportarReservas() {
-		// TODO Auto-generated method stub
-		
+		FileWriter fichero = null;
+		PrintWriter pw = null;
+		try {
+			fichero = new FileWriter(ruta+"\\Reservas.txt");
+			pw = new PrintWriter(fichero);
+			
+			//escribir con pw.println();
+			for (int z=0;z<this.listaReservas.size();z++) {
+				pw.println(listaReservas.get(z).getId()+"-"+listaReservas.get(z).getUsuario()+"-"+
+						listaReservas.get(z).getViaje()+"-"+String.valueOf(listaReservas.get(z).getExtraPosibilidadCancelacion()));
+			}
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if (null!=fichero)
+					fichero.close();
+			}catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
 	}
 	
 }
