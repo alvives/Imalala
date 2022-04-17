@@ -3,6 +3,9 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 public class ListaUsuarios {
 
 	private ArrayList<Usuario> listaUsuarios;
@@ -40,7 +43,21 @@ public class ListaUsuarios {
 	}
 
 	public void anadirUsuario(Usuario u) {
-		listaUsuarios.add(u);
+		boolean encontrado = false;
+		int i = 0;
+		
+		while(!encontrado && i < listaUsuarios.size()) {
+			if(listaUsuarios.get(i).getId().equals(u.getId()))
+				encontrado = true;
+			i++;
+		}
+		
+		if(!encontrado) {
+			listaUsuarios.add(u);
+		}
+		else {
+			System.out.println("Usuario ya registrado");
+		}		
 	}
 
 	public boolean buscarUsuarioContrasena(String id, String cont) {
