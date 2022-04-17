@@ -1,1 +1,3 @@
-viaje1 - alojamiento1-transporte1ida-transporte1vuelta-5-102.99
+viaje1-alojamiento1-tptIda-Tptvuelta-5-102.99
+viaje2-alojamiento2-tptIda-tptvuelta-4-500
+viaje3-alojamiento3-tpt-tpt-6-1000

@@ -1,1 +1,3 @@
-reserva1, usuario1, viaje1
+reserva1-a-viaje1-false
+reserva2-a-viaje2-false
+reserva3-b-viaje3-false

@@ -56,7 +56,7 @@ public class ListaUsuarios {
 			listaUsuarios.add(u);
 		}
 		else {
-			System.out.println("Usuario ya registrado");
+			JOptionPane.showMessageDialog(new JFrame(), "Error, ya existe un usuario con el mismo identificador", "ERROR", JOptionPane.ERROR_MESSAGE);		
 		}		
 	}
 

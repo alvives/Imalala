@@ -31,11 +31,11 @@ public class ListaReservas {
 		listaReservas.add(r);
 	}
 	
-	public ArrayList<Reserva> mostrarReservas (Usuario u){
+	public ArrayList<Reserva> getReservasUsuario (Usuario u){
 		ArrayList<Reserva> lista = new ArrayList<Reserva>();
 		int i = 0;
 		while (i < listaReservas.size()) {
-			if (listaReservas.get(i).getUsuario().equals(u)) {
+			if (listaReservas.get(i).getUsuario().getId().equals(u.getId())) {
 				lista.add(listaReservas.get(i));
 			}
 			i++;
@@ -45,7 +45,7 @@ public class ListaReservas {
 	}
 
 	public void llenarReservas(ListaUsuarios listaUsuarios, ListaViajes listaViajes) {
-		File doc = new File(ruta+"\\Viajes.txt");	
+		File doc = new File(ruta+"\\Reservas.txt");	
 		Scanner obj;
 		
 		try {

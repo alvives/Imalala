@@ -34,19 +34,21 @@ public class View4 extends JFrame implements Observer {
 		this.getContentPane().setLayout(null);
 		jScrollPane1.setBounds(new Rectangle(0, 0, 3, 3));
 		
-		ArrayList<Reserva> listaReservas = model.listaReservas.mostrarReservas(u);
+		ArrayList<Reserva> listaReservas = model.listaReservas.getReservasUsuario(u);
 		
 				
 		jLabel1.setText("Aqui tienes un listado con tus reservas " + this.u.getNombre() + " " + this.u.getApellido() + ":");
 		jLabel1.setBounds(new Rectangle(41, 15, 400, 23));
+		
 		int y=0;
 		for (int z=0;z<listaReservas.size();z++) {
 			listajLabel.add(new JLabel());
-			listajLabel.get(z).setText(z+1 + " Ciudad: "+listaReservas.get(z).getViaje().getAlojamiento().getCiudad());
+			listajLabel.get(z).setText("Reserva: "+ listaReservas.get(z).getId() + " (" + listaReservas.get(z).getViaje().getAlojamiento().getCiudad() + ")");
 			listajLabel.get(z).setBounds(new Rectangle(41, 65+y, 400, 23));
 			y+=50;
 			this.getContentPane().add(listajLabel.get(z), null);
 		}
+		
 		
 		
 		this.getContentPane().add(jLabel1, null);
