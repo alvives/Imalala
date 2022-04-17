@@ -1,7 +1,9 @@
 package view;
 import java.awt.Rectangle;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
@@ -9,6 +11,7 @@ import javax.swing.JScrollPane;
 import control.Model;
 import control.Observer;
 import model.Usuario;
+import model.Reserva;
 
 public class View7 extends JFrame implements Observer {
 	Model model;
@@ -39,7 +42,7 @@ public class View7 extends JFrame implements Observer {
 		this.getContentPane().setLayout(null);
 		jScrollPane1.setBounds(new Rectangle(0, 0, 3, 3));
 		
-        ArrayList<Reserva> listaReservas = model.listaReservas.getReservasUsuario(u);
+        ArrayList<Reserva> listaReservas = model.getListaReservas().getReservasUsuario(u);
 
 		jLabel1.setText("Selecciona la reserva que quieres cancelar " + this.u.getNombre() + " " + this.u.getApellido() + ":");
 		jLabel1.setBounds(new Rectangle(41, 15, 400, 23));
@@ -54,13 +57,19 @@ public class View7 extends JFrame implements Observer {
             listajButton.get(z).setBounds(new Rectangle(300, 65+y, 100, 27));
 		    listajButton.get(z).setText("Cancelar");
 
-		    listajButton.get(z).addActionListener(new java.awt.event.ActionListener() 	{
+		    listajButton.get(z).addActionListener(new ActionListener() 	{
 
 			public void actionPerformed(ActionEvent e)  {
 				
                 
 
 
+			}
+
+			@Override
+			public void actionPerformed(java.awt.event.ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				
 			}
 
 		    });
