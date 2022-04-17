@@ -134,8 +134,6 @@ public class ListaViajes {
 		
 	}
 	
-	
-	
 	public Viaje buscarViaje(String id) {
 
 		boolean encont = false;
