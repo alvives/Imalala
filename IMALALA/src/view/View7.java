@@ -3,6 +3,8 @@ import java.awt.Rectangle;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import java.awt.event.ActionEvent;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -64,12 +66,6 @@ public class View7 extends JFrame implements Observer {
                 
 
 
-			}
-
-			@Override
-			public void actionPerformed(java.awt.event.ActionEvent arg0) {
-				// TODO Auto-generated method stub
-				
 			}
 
 		    });

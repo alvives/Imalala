@@ -29,7 +29,7 @@ public class View1 extends JFrame implements Observer {
 	JButton jButton3 = new JButton();
 	JButton jButton4 = new JButton();
 	JButton jButton5 = new JButton();
-	
+	JButton jButton6 = new JButton();
 	
 	public View1() 	{
 	}
@@ -85,6 +85,13 @@ public class View1 extends JFrame implements Observer {
 			}
 		});
 		
+		jButton6.setBounds(new Rectangle(42, 308, 300, 27));
+		jButton6.setText("Cerrar sesión");
+		jButton6.addActionListener(new java.awt.event.ActionListener() 	{
+			public void actionPerformed(ActionEvent e)  {
+				jButton5_actionPerformed(e);
+			}
+		});
 		
 		
 		jLabel1.setText("Bienvenido " + this.u.getNombre() + " " + this.u.getApellido() + ", pulse la accion que desee realizar:");
@@ -96,6 +103,7 @@ public class View1 extends JFrame implements Observer {
 		this.getContentPane().add(jButton3, null);
 		this.getContentPane().add(jButton4, null);
 		this.getContentPane().add(jButton5, null);
+		this.getContentPane().add(jButton6, null);
 	}
 
 	void jButton1_actionPerformed(ActionEvent e) {
@@ -126,6 +134,11 @@ public class View1 extends JFrame implements Observer {
 		this.model.getListaUsuarios().darBajaUsuario(this.u.getId());
 		this.setVisible(false);
 	}
+
+	void jButton6_actionPerformed(ActionEvent e) {
+		this.setVisible(false);
+	}
+	
 	
 	@Override
 	public void dataUpdate(Model model) {
