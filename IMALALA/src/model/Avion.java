@@ -1,6 +1,7 @@
 package model;
 public class Avion extends Transporte{
 	
+	private	final String tipo = "avion";
 	
 	public Avion (String id, String capacidad) {
 		super(id, capacidad);
@@ -9,9 +10,7 @@ public class Avion extends Transporte{
 	@Override
 	public String getTipoTransporte() {
 		
-		return "avion";
+		return this.tipo;
 	}
-
-	
 	
 }

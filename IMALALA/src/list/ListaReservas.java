@@ -15,7 +15,8 @@ public class ListaReservas {
 	private ArrayList<Reserva> listaReservas;
 	private String ruta;
 	public ListaReservas(String ruta) {
-		listaReservas = new ArrayList<Reserva>();
+
+		this.listaReservas = new ArrayList<Reserva>();
 		this.ruta=ruta;
 
 	}

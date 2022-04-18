@@ -12,7 +12,8 @@ public class ListaAlojamientos {
 	private ArrayList<Alojamiento> listaAlojamientos;
 	private String ruta;
 	public ListaAlojamientos(String ruta) {
-		listaAlojamientos = new ArrayList<Alojamiento>();
+		
+		this.listaAlojamientos = new ArrayList<Alojamiento>();
 		this.ruta=ruta;
 	}
 	

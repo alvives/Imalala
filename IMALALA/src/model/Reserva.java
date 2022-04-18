@@ -55,11 +55,6 @@ public class Reserva {
 	public boolean isExtraPosibilidadCancelacion() {
 		return extraPosibilidadCancelacion;
 	}
-
-
-	
-	
-	
 	
 	
 }

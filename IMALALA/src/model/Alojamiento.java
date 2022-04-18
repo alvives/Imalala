@@ -15,26 +15,35 @@ public class Alojamiento {
 	  this.direccion=direccion;
 	  this.nombreHotel=nombreHotel;
 	}
-	  
-
+	
+	//GET
 	  
 	public String getId (){
 		return this.id;
 	}
 	
+	public String getNombreHotel() {
+		return nombreHotel;
+	}
+
 	public String getCiudad (){
 		return this.ciudad;
 	}
 	
-    public void setID(String id){
-    	this.id=id;
-	}
-
-
 	public String getCapacidad() {
 		return capacidad;
 	}
 
+	public String getDireccion() {
+		return direccion;
+	}
+
+
+	// SET
+
+    public void setID(String id){
+    	this.id=id;
+	}
 
 	public void setCapacidad(String capacidad) {
 		this.capacidad = capacidad;
@@ -42,28 +51,11 @@ public class Alojamiento {
 
 	public void setCiudad(String ciudad) {
 		this.ciudad = ciudad;
-	}
-
-	
-
-
-
-
-
-	public String getDireccion() {
-		return direccion;
-	}
-
+	}	
 
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
-
-
-	public String getNombreHotel() {
-		return nombreHotel;
-	}
-
 
 	public void setNombreHotel(String nombreHotel) {
 		this.nombreHotel = nombreHotel;

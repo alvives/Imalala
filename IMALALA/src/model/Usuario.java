@@ -20,14 +20,14 @@ public class Usuario {
 	    this.dni=dni;
 	  }
 
-	  public Usuario(){
+	  /*public Usuario(){
 	    this.id="darodr";
 	    this.contrasena="ajedrez";  
 	    this.nombre="David";
 	    this.apellido="Rodriguez";
 	    this.tlf="667663377";
 	    this.dni="38979838F";
-	  }
+	  }*/
 	  
 
 	  //gets
@@ -60,7 +60,7 @@ public class Usuario {
 	    this.id=id;
 	  }
 	  
-	  //prints
+	  /*prints
 	   public void printID (){
 	    System.out.println(this.id);
 	  }
@@ -78,7 +78,7 @@ public class Usuario {
 	  }
 	   public void printDNI (){
 	    System.out.println(this.dni);
-	  }
+	  }*/
 
 	  public boolean comprobarContrasena(String cont) {
 		  return this.contrasena.equals(cont);
