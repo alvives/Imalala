@@ -87,10 +87,10 @@ public class View1 extends JFrame implements Observer {
 		});
 		
 		jButton6.setBounds(new Rectangle(42, 308, 300, 27));
-		jButton6.setText("Cerrar sesión");
+		jButton6.setText("Cerrar sesion");
 		jButton6.addActionListener(new java.awt.event.ActionListener() 	{
 			public void actionPerformed(ActionEvent e)  {
-				jButton5_actionPerformed(e);
+				jButton6_actionPerformed(e);
 			}
 		});
 		
