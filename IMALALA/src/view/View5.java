@@ -11,10 +11,14 @@ import javax.swing.JScrollPane;
 
 import control.Model;
 import control.Observer;
+import model.Usuario;
+import model.Gestor;
 
 public class View5 extends JFrame implements Observer {
 	Model model;
-	
+	Usuario u;
+	Gestor g;
+	ModificarViajeView1 viajeViewModificar1;
 	
 	JScrollPane jScrollPane1 = new JScrollPane();	
 	JLabel jLabel1 = new JLabel();
@@ -28,9 +32,10 @@ public class View5 extends JFrame implements Observer {
 	public View5() 	{
 	}
 	
-	public View5(Model model) 	{
+	public View5(Model model, Gestor g) 	{
 	try 	{
 		this.model = model;
+		this.g=g;
 		jbInit();
 		}
 		catch(Exception e) 	{
@@ -80,7 +85,9 @@ public class View5 extends JFrame implements Observer {
 	}
 	
 	void jButton2_actionPerformed(ActionEvent e) {
-
+		this.viajeViewModificar1 = new ModificarViajeView1(this.model, this.g);
+		this.viajeViewModificar1.setSize(475,410);
+		this.viajeViewModificar1.setVisible(true);
 	}
 	
 	void jButton3_actionPerformed(ActionEvent e) {

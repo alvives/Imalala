@@ -104,7 +104,7 @@ public class Controller extends JFrame {
 			this.view1.setSize(475,410);
 			this.view1.setVisible(true);
 		} else if(model.gestor.getNombre().equals(id) && model.gestor.getContrasena().equals(contrasena)){
-			this.view5 = new View5(this.model);
+			this.view5 = new View5(this.model,this.model.gestor);
 			this.view5.setSize(475,410);
 			this.view5.setVisible(true);
 		}else{
