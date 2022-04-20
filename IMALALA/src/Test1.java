@@ -1,5 +1,7 @@
-/*import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
+
+import model.Gestor;
 
 public class Test1 {
 
@@ -17,4 +19,4 @@ public class Test1 {
 		
 		
 	}
-}*/
+}

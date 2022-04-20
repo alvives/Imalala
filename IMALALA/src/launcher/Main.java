@@ -12,10 +12,10 @@ import java.sql.*;
 public class Main {
 
 	public static void main(String[] args) {
-        System.out.println("Bienvenido a Imalala SA, la mejor agencia de viajes");
+        /*System.out.println("Bienvenido a Imalala SA, la mejor agencia de viajes");
         ListaUsuarios listaUsuarios = new ListaUsuarios("");
         //listaUsuarios.anadirUsuario(new Usuario());
-        /*
+        
         System.out.println("Introduzca su id de usuario");
         Scanner in = new Scanner(System.in);
         String s = in.nextLine();
@@ -31,7 +31,7 @@ public class Main {
         else{
         	System.out.println("Id incorrecto, introduzca datos para registrarse");
 
-        };*/
+        };
         
 
         try
@@ -47,7 +47,7 @@ public class Main {
         //Class.forName(myDriver);
         //Connection conn = DriverManager.getConnection(myUrl, "root", "");
         
-        /*
+        
         // our SQL SELECT query. 
         // if you only need a few columns, specify them by name instead of using "*"
         String query = "SELECT * FROM usuarios";
@@ -71,14 +71,14 @@ public class Main {
                 
                 listaUsuarios.anadirUsuario(new Usuario(id, contrasena, nombre, apellido, tlf, dni));
        }
-        st.close();*/
+        st.close();
         }
 
         catch (Exception e)
         {
                 System.err.println("Fail to connect database =( ! ");
                 System.err.println(e.getMessage());
-        }
+        }*/
         
         Controller c = new Controller();
 		c.setSize(475,410);
