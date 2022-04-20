@@ -76,7 +76,7 @@ public class View5 extends JFrame implements Observer {
 		});		
 		
 		
-		jLabel1.setText("Bienvenido gestor, pulse la accion que desee realizaras:");
+		jLabel1.setText("Bienvenido gestor, pulse la accion que desee realizar:");
 		jLabel1.setBounds(new Rectangle(41, 15, 400, 23));
 		
 		this.getContentPane().add(jLabel1, null);
