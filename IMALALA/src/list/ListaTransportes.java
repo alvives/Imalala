@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import model.Transporte;
 import model.Avion;
@@ -118,5 +119,9 @@ public class ListaTransportes {
 		}
 		return (listaTransportes.get(i-1));
 		
+	}
+
+	public List<Transporte> getListaTransp(){
+		return listaTransportes;
 	}
 }

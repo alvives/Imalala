@@ -3,6 +3,8 @@ package view;
 
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -12,7 +14,10 @@ import javax.swing.JScrollPane;
 import control.Model;
 import control.Observer;
 import model.Usuario;
+import model.Viaje;
+import model.Alojamiento;
 import model.Gestor;
+import model.Transporte;
 
 public class View5 extends JFrame implements Observer {
 	Model model;
@@ -81,6 +86,25 @@ public class View5 extends JFrame implements Observer {
 	}
 
 	void jButton1_actionPerformed(ActionEvent e) {
+		DesignTripDialog dialog= new DesignTripDialog(this);
+		List<String> idAlojamientos=new ArrayList<>();
+		List<String> idTransp=new ArrayList<>();
+		for(Alojamiento a: model.getListaAlojamientos().getListaAlojameinto()){
+			idAlojamientos.add(a.getId());
+		}
+
+		for(Transporte t: model.getListaTransportes().getListaTransp()){
+			idTransp.add(t.getId());
+		}
+
+		int status=dialog.open(idTransp, idAlojamientos);
+		if(status==1) {
+			Transporte ida=model.getListaTransportes().buscarTransporte(dialog.getTranspIda());
+			Transporte vuelta=model.getListaTransportes().buscarTransporte(dialog.getTranspVuelta());
+			Alojamiento aloj=model.getListaAlojamientos().buscarAlojamiento(dialog.getAlojamiento());
+			Viaje viajeCreado=new Viaje(dialog.getIdViaje(),aloj, ida, vuelta, dialog.getReservas(), dialog.getPrecio());
+			model.getListaViajes().insertarViaje(viajeCreado);
+		}
 	
 	}
 	

@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import model.Alojamiento;
 
@@ -79,5 +80,9 @@ public class ListaAlojamientos {
 			i++;
 		}
 		return (listaAlojamientos.get(i-1));
+	}
+
+	public List<Alojamiento> getListaAlojameinto(){
+		return listaAlojamientos;
 	}
 }
