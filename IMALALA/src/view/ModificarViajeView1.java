@@ -106,7 +106,7 @@ public class ModificarViajeView1 extends JFrame implements Observer {
 	}
 
 	void jButton1_actionPerformed(ActionEvent e) {
-		if (!jTextField1.getText().isEmpty()) {
+		if (!jTextField1.getText().isEmpty()&&!jTextField2.getText().isEmpty()&&!jTextField3.getText().isEmpty()&&!jTextField4.getText().isEmpty()) {
 			String id = jTextField1.getText();
 			if(this.model.getListaViajes().buscarViaje(id)!=null){
 				String alojamiento=jTextField2.getText();
