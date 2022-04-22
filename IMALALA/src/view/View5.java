@@ -119,14 +119,15 @@ public class View5 extends JFrame implements Observer {
 
 			if(idViaje.equals(idViajeEleg)){
 				JOptionPane.showMessageDialog(null, "El id del viaje ya existe, ponga un id diferente");
+				status=dialog.open(idTransp, idAlojamientos);
 			}else if(dialog.getReservas()>maxReserva){
 				JOptionPane.showMessageDialog(null, "El numero de reservas supera a la capacidad maxima de alojamientos y transportes, no debe superar de: "+String.valueOf(maxReserva)+" Reservas");
+				status=dialog.open(idTransp, idAlojamientos);
 			}else{
 				Viaje viajeCreado=new Viaje(dialog.getIdViaje(),aloj, ida, vuelta, dialog.getReservas(), dialog.getPrecio());
 				model.getListaViajes().insertarViaje(viajeCreado);
+				status=0;
 			}
-
-			status=dialog.open(idTransp, idAlojamientos);
 		}
 	
 	}
