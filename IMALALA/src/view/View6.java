@@ -42,7 +42,6 @@ public class View6 extends JFrame implements Observer {
 	}
 	
 	private void jbInit() throws Exception 	{
-		setLocation(getX()+600, getY()+200);
 		this.getContentPane().setLayout(null);
 		jScrollPane1.setBounds(new Rectangle(0, 0, 3, 3));
 		
@@ -55,6 +54,8 @@ public class View6 extends JFrame implements Observer {
 
 	
 		for (int z=0;z<listaViajes.size();z++) {
+			
+			x = z;
 			
             if(listaViajes.get(z).getReservasDisponibles() != 0){
 
@@ -72,8 +73,8 @@ public class View6 extends JFrame implements Observer {
 
 			public void actionPerformed(ActionEvent e)  {
 				
-                int num = model.getListaReservas().getListaReservas().size()+1;
-						
+				int num = model.getListaReservas().getListaReservas().size()+1;
+				
 				model.getListaReservas().anadeReserva(new Reserva("reserva"+ num, u, listaViajes.get(x),false));
 	
 

@@ -1,6 +1,5 @@
 package view;
 
-
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
@@ -27,6 +26,9 @@ public class View5 extends JFrame implements Observer {
 	Gestor g;
 	ModificarViajeView1 viajeViewModificar1;
 	View8 view8;
+	GestionAlojamientos gestionAlojamiento;
+	GestionTransportes gestionTransporte;
+
 	
 	JScrollPane jScrollPane1 = new JScrollPane();	
 	JLabel jLabel1 = new JLabel();
@@ -35,7 +37,7 @@ public class View5 extends JFrame implements Observer {
 	JButton jButton3 = new JButton();
 	JButton jButton4 = new JButton();
 	JButton jButton5 = new JButton();
-	
+
 	
 	public View5() 	{
 	}
@@ -63,21 +65,35 @@ public class View5 extends JFrame implements Observer {
 				jButton1_actionPerformed(e);
 			}
 		});
-		jButton2.setBounds(new Rectangle(42, 100, 300, 27));
+		jButton2.setBounds(new Rectangle(42, 104, 300, 27));
 		jButton2.setText("Modificar viaje");
 		jButton2.addActionListener(new java.awt.event.ActionListener() 	{
 			public void actionPerformed(ActionEvent e)  {
 				jButton2_actionPerformed(e);
 			}
 		});
-		jButton3.setBounds(new Rectangle(42, 152, 300, 27));
+		jButton3.setBounds(new Rectangle(42, 156, 300, 27));
 		jButton3.setText("Eliminar viaje");
 		jButton3.addActionListener(new java.awt.event.ActionListener() 	{
 			public void actionPerformed(ActionEvent e)  {
 				jButton3_actionPerformed(e);
 			}
 		});		
-		
+		jButton4.setBounds(new Rectangle(42, 208, 300, 27));
+		jButton4.setText("Gestionar alojamientos");
+		jButton4.addActionListener(new java.awt.event.ActionListener() 	{
+			public void actionPerformed(ActionEvent e)  {
+				jButton4_actionPerformed(e);
+			}
+		});
+		jButton5.setBounds(new Rectangle(42, 260, 300, 27));
+		jButton5.setText("Gestionar transportes");
+		jButton5.addActionListener(new java.awt.event.ActionListener() 	{
+			public void actionPerformed(ActionEvent e)  {
+				jButton5_actionPerformed(e);
+			}
+		});
+
 		
 		jLabel1.setText("Bienvenido gestor, pulse la accion que desee realizar:");
 		jLabel1.setBounds(new Rectangle(41, 15, 400, 23));
@@ -86,6 +102,8 @@ public class View5 extends JFrame implements Observer {
 		this.getContentPane().add(jButton1, null);
 		this.getContentPane().add(jButton2, null);
 		this.getContentPane().add(jButton3, null);
+		this.getContentPane().add(jButton4, null);
+		this.getContentPane().add(jButton5, null);
 	}
 
 	void jButton1_actionPerformed(ActionEvent e) {
@@ -144,6 +162,17 @@ public class View5 extends JFrame implements Observer {
 		this.view8.setVisible(true);
 	}
 
+	void jButton4_actionPerformed(ActionEvent e) {
+		this.gestionAlojamiento = new GestionAlojamientos(this.model, this.g);
+		this.gestionAlojamiento.setSize(475,410);
+		this.gestionAlojamiento.setVisible(true);
+	}
+
+	void jButton5_actionPerformed(ActionEvent e) {
+		this.gestionTransporte = new GestionTransportes(this.model, this.g);
+		this.gestionTransporte.setSize(475,410);
+		this.gestionTransporte.setVisible(true);
+	}
 	
 	@Override
 	public void dataUpdate(Model model) {
