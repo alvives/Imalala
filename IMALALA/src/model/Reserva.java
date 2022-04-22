@@ -20,6 +20,7 @@ public class Reserva {
 	public String getId() {
 		return this.id;
 	}
+
 	
 	public Usuario getUsuario() {
 		return usuario;

@@ -24,6 +24,7 @@ public class View5 extends JFrame implements Observer {
 	Usuario u;
 	Gestor g;
 	ModificarViajeView1 viajeViewModificar1;
+	View8 view8;
 	
 	JScrollPane jScrollPane1 = new JScrollPane();	
 	JLabel jLabel1 = new JLabel();
@@ -115,7 +116,9 @@ public class View5 extends JFrame implements Observer {
 	}
 	
 	void jButton3_actionPerformed(ActionEvent e) {
-
+		this.view8 = new View8(this.model, this.g);
+		this.view8.setSize(800,410);
+		this.view8.setVisible(true);
 	}
 
 	

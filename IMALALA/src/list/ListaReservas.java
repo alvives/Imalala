@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 import model.Reserva;
 import model.Usuario;
+import model.Viaje;
 
 public class ListaReservas {
 
@@ -48,6 +49,19 @@ public class ListaReservas {
 		}
 		
 		return lista;
+	}
+	
+	public int getReservasRealizadas(Viaje v){
+		int i = 0;
+		int r = 0;
+		while (i < listaReservas.size()) {
+			if (listaReservas.get(i).getViaje().getId().equals(v.getId())) {
+				r++;
+			}
+			i++;
+		}
+
+		return r;
 	}
 
 	public void llenarReservas(ListaUsuarios listaUsuarios, ListaViajes listaViajes) {
