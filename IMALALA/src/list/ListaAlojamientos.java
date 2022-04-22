@@ -82,7 +82,7 @@ public class ListaAlojamientos {
 		return (listaAlojamientos.get(i-1));
 	}
 
-	public List<Alojamiento> getListaAlojameinto(){
+	public List<Alojamiento> getListaAlojamiento(){
 		return listaAlojamientos;
 	}
 }

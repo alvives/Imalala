@@ -3,6 +3,8 @@ package launcher;
 
 import java.util.Scanner;
 
+import javax.swing.SwingUtilities;
+
 import model.Usuario;
 import control.Controller;
 import list.ListaUsuarios;
@@ -80,11 +82,14 @@ public class Main {
                 System.err.println(e.getMessage());
         }*/
         
-        Controller c = new Controller();
-		c.setSize(475,410);
-		c.setVisible(true);
-
-
+        SwingUtilities.invokeLater(new Runnable() {
+                @Override
+                public void run() {        
+                        Controller c = new Controller();
+                        c.setSize(475,410);
+                        c.setVisible(true);
+                }
+                });
 	}
 
 }

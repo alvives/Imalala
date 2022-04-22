@@ -103,7 +103,6 @@ public class View3 extends JFrame implements Observer {
 		
 	@Override
 	public void dataUpdate(Model model) {
-		// TODO Auto-generated method stub
 		
 	}
 	

@@ -1,7 +1,9 @@
 package view;
 
 import java.awt.*;
+
 import javax.swing.*;
+
 import java.util.List;
 
 public class DesignTripDialog extends JDialog{
@@ -11,7 +13,7 @@ public class DesignTripDialog extends JDialog{
     private DefaultComboBoxModel <String> _transpIdaModel;
     private DefaultComboBoxModel <String> _transpVueltaModel;
     private DefaultComboBoxModel <String> _alojamientoModel;
-    private int _status;
+    private int _status=0;
     private JSpinner reservasDisp;
     private JTextField priceField;
     private JTextField idField;
@@ -22,7 +24,6 @@ public class DesignTripDialog extends JDialog{
     }
 
     private void init() {
-        _status=0;
         setTitle("Diseña un viaje");
 		JPanel mainPanel= new JPanel();
 		mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS)); 
@@ -61,12 +62,12 @@ public class DesignTripDialog extends JDialog{
 		transpIda = new JComboBox<>(_transpIdaModel);
 		viewsPanel.add(transpIda);
 
-        viewsPanel.add( new JLabel("Transporte de ida: "));
+        viewsPanel.add( new JLabel("Transporte de vuelta: "));
 		_transpVueltaModel =  new DefaultComboBoxModel<>(); 
 		transpVuelta = new JComboBox<>(_transpVueltaModel);
 		viewsPanel.add(transpVuelta);
 
-        reservasDisp= new JSpinner(new SpinnerNumberModel(0, 0, 50, 1)); //el max debe corresponder con la cap del alojamiento?
+        reservasDisp= new JSpinner(new SpinnerNumberModel(0, 0, Integer.MAX_VALUE, 1)); 
 		viewsPanel.add( new JLabel("Reservas Disponibles: "));
 		viewsPanel.add(reservasDisp);
 
@@ -85,16 +86,23 @@ public class DesignTripDialog extends JDialog{
 
 		JButton okButton = new JButton("Crear Viaje");
 		okButton.addActionListener(e-> {
-			if(_transpIdaModel.getSelectedItem()!=null && _transpVueltaModel.getSelectedItem()!=null 
-            && _alojamientoModel.getSelectedItem()!=null){
-			    _status=1; 
+			if(priceField.getText()!=null && idField.getText()!=null 
+            && (int)reservasDisp.getValue()!=0){
+                try{
+                    Double.parseDouble(priceField.getText());
+                    _status=1; 
+                    DesignTripDialog.this.setVisible(false);
+                }catch(NumberFormatException nfe){
+                    JOptionPane.showMessageDialog(null, "El formato del precio esta mal, separe los digitos con un punto");
+                }
+            }else{
+                JOptionPane.showMessageDialog(null, "Te faltan datos por rellenar!! Asegure que ha puesto al menos 1 reserva");
             }
-            DesignTripDialog.this.setVisible(false);
+
         });
 		buttonsPanel.add(okButton);
-		
-		pack();
-        setSize(400, 300);
+           
+        setSize(600, 400);
 		setResizable(true);
 		setVisible(false);
 		
@@ -102,6 +110,7 @@ public class DesignTripDialog extends JDialog{
 
 
     public int open(List<String> listTransp,List<String> listAloj){
+        _status=0;
         _transpIdaModel.removeAllElements();
         _transpVueltaModel.removeAllElements();
         for(String id: listTransp){

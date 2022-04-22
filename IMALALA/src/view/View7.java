@@ -101,7 +101,6 @@ public class View7 extends JFrame implements Observer {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				reservaMun = reservaList.getSelectedIndex();														
 				
 			}
@@ -112,7 +111,6 @@ public class View7 extends JFrame implements Observer {
 		panel1.add(CPanel,BorderLayout.PAGE_START);
 	}
 	private void addBotton() {
-		// TODO Auto-generated method stub
 		JPanel BPanel=new JPanel();					
 		JButton cancelB=new JButton("Cancelar reserva");
 		JButton atrasB=new JButton("Atras");		
