@@ -1,9 +1,10 @@
+package tst.model;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 import model.Gestor;
 
-public class Test1 {
+public class GestorTest {
 
 	@Test
 	public void test1() {

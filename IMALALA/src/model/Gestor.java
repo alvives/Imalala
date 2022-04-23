@@ -26,12 +26,12 @@ public class Gestor {
 	}
 
 	public void eliminarGestor() {
-		this.gestor = null;
+		Gestor.gestor = null;
 	}
 	
 	public void cambiarGestor (String nombre, String contrasena) {
 		this.eliminarGestor();
-		this.getSingletonInstance(nombre, contrasena);
+		Gestor.getSingletonInstance(nombre, contrasena);
 	}
 
 	public Object getContrasena() {
