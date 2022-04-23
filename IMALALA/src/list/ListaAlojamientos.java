@@ -11,15 +11,13 @@ import model.Alojamiento;
 public class ListaAlojamientos {
 	
 	private ArrayList<Alojamiento> listaAlojamientos;
-	private String ruta;
-	public ListaAlojamientos(String ruta) {
+	public ListaAlojamientos() {
 		
 		this.listaAlojamientos = new ArrayList<Alojamiento>();
-		this.ruta=ruta;
 	}
 	
 
-	public void llenarAlojamientos() {
+	public void llenarAlojamientos(String ruta) {
 
 
 		File doc = new File(ruta+"\\Alojamientos.txt");
@@ -38,7 +36,7 @@ public class ListaAlojamientos {
 		
 	}
 	
-	public void exportarAlojamientos() {
+	public void exportarAlojamientos(String ruta) {
 
 
 		FileWriter fichero = null;

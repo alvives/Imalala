@@ -13,11 +13,11 @@ public class Model {
 	String ruta="IMALALA\\Base_Datos\\";
 	Gestor gestor = Gestor.getSingletonInstance("gestor", "1");
 	
-	ListaUsuarios listaUsuarios = new ListaUsuarios(ruta);
-	ListaReservas listaReservas = new ListaReservas(ruta);
-	ListaViajes listaViajes = new ListaViajes(ruta);
-	ListaTransportes listaTransportes = new ListaTransportes(ruta);
-	ListaAlojamientos listaAlojamientos = new ListaAlojamientos(ruta);
+	ListaUsuarios listaUsuarios = new ListaUsuarios();
+	ListaReservas listaReservas = new ListaReservas();
+	ListaViajes listaViajes = new ListaViajes();
+	ListaTransportes listaTransportes = new ListaTransportes();
+	ListaAlojamientos listaAlojamientos = new ListaAlojamientos();
 
 	ArrayList observer = new ArrayList();
 	
@@ -41,19 +41,19 @@ public class Model {
 	//METODOS DE LLENAR LISTAS
 	
 	public void llenarListaViajes(ListaAlojamientos listaAlojamientos,ListaTransportes listaTransportes) {
-		listaViajes.llenarViajes(listaAlojamientos,listaTransportes);
+		listaViajes.llenarViajes(listaAlojamientos,listaTransportes,ruta);
 	}
 	public void llenarListaReservas(ListaUsuarios listaUsuarios, ListaViajes listaViajes) {
-		listaReservas.llenarReservas(listaUsuarios, listaViajes);
+		listaReservas.llenarReservas(listaUsuarios, listaViajes,ruta);
 	}
 	public void llenarListaUsuarios() {
-		listaUsuarios.llenarUsuarios();
+		listaUsuarios.llenarUsuarios(ruta);
 	}
 	public void llenarListaTransportes() {
-		listaTransportes.llenarTransportes();
+		listaTransportes.llenarTransportes(ruta);
 	}
 	public void llenarListaAlojamientos() {
-		listaAlojamientos.llenarAlojamientos();
+		listaAlojamientos.llenarAlojamientos(ruta);
 	}
 	
 	
@@ -93,5 +93,25 @@ public class Model {
 	public void removeObserver(Observer o) 	{
 		observer.remove(o);
 	}
+
+	public void exportarUsuarios() {
+		listaUsuarios.exportarUsuarios(ruta);
+	}
+
+    public void exportarAlojamientos() {
+		listaAlojamientos.exportarAlojamientos(ruta);
+    }
+
+	public void exportarTransportes() {
+		listaTransportes.exportarTransportes(ruta);
+	}
+
+    public void exportarViajes() {
+		listaViajes.exportarViajes(ruta);
+    }
+
+    public void exportarReservas() {
+		listaReservas.exportarReservas(ruta);
+    }
 	
 }

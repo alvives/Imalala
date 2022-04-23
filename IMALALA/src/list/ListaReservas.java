@@ -14,11 +14,9 @@ import model.Viaje;
 public class ListaReservas {
 
 	private ArrayList<Reserva> listaReservas;
-	private String ruta;
-	public ListaReservas(String ruta) {
+	public ListaReservas() {
 
 		this.listaReservas = new ArrayList<Reserva>();
-		this.ruta=ruta;
 
 	}
 
@@ -64,7 +62,7 @@ public class ListaReservas {
 		return r;
 	}
 
-	public void llenarReservas(ListaUsuarios listaUsuarios, ListaViajes listaViajes) {
+	public void llenarReservas(ListaUsuarios listaUsuarios, ListaViajes listaViajes, String ruta) {
 		File doc = new File(ruta+"\\Reservas.txt");	
 		Scanner obj;
 		
@@ -81,7 +79,7 @@ public class ListaReservas {
 		}	
 	}
 	
-	public void exportarReservas() {
+	public void exportarReservas(String ruta) {
 		FileWriter fichero = null;
 		PrintWriter pw = null;
 		try {

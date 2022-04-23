@@ -10,11 +10,9 @@ import model.Usuario;
 public class ListaUsuarios {
 
 	private ArrayList<Usuario> listaUsuarios;
-	private String ruta;
 
-	public ListaUsuarios(String ruta) {
+	public ListaUsuarios() {
 		listaUsuarios = new ArrayList<Usuario>();
-		this.ruta=ruta;
 
 	}
 
@@ -108,7 +106,7 @@ public class ListaUsuarios {
 
 	}
 
-	public void llenarUsuarios() {
+	public void llenarUsuarios(String ruta) {
 		
 		//File doc = new File("Usuarios.txt");
 		
@@ -129,7 +127,7 @@ public class ListaUsuarios {
 		
 	}
 	
-	public void exportarUsuarios() {
+	public void exportarUsuarios(String ruta) {
 
 		FileWriter fichero = null;
 		PrintWriter pw = null;

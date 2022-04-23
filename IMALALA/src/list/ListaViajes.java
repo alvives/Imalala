@@ -11,12 +11,10 @@ import model.Alojamiento;
 import model.Transporte;
 public class ListaViajes {
 	private ArrayList<Viaje> listaViajes;
-	private String ruta;
 	
 	
-	public ListaViajes (String ruta) {
+	public ListaViajes () {
 		listaViajes = new ArrayList<Viaje>();
-		this.ruta=ruta;
 	}
 	
 	public void insertarViaje(Viaje v) {
@@ -87,7 +85,7 @@ public class ListaViajes {
 		return lista;
 	}
 
-	public void llenarViajes(ListaAlojamientos listaAlojamientos,ListaTransportes listaTransportes) {
+	public void llenarViajes(ListaAlojamientos listaAlojamientos,ListaTransportes listaTransportes, String ruta) {
 		File doc = new File(ruta+"\\Viajes.txt");	
 		Scanner obj;
 		
@@ -106,7 +104,7 @@ public class ListaViajes {
 		}	
 	}
 
-	public void exportarViajes() {
+	public void exportarViajes(String ruta) {
 
 		FileWriter fichero = null;
 		PrintWriter pw = null;

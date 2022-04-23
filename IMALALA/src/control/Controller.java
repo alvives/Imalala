@@ -117,11 +117,11 @@ public class Controller extends JFrame {
 		this.view2.setVisible(true);
 	}
 	void jButton3_actionPerformed(ActionEvent e) {
-		this.model.listaUsuarios.exportarUsuarios();
-		this.model.listaTransportes.exportarTransportes();
-		this.model.listaAlojamientos.exportarAlojamientos();;
-		this.model.listaViajes.exportarViajes();;
-		this.model.listaReservas.exportarReservas();;
+		model.exportarUsuarios();
+		model.exportarTransportes();
+		model.exportarAlojamientos();
+		model.exportarViajes();
+		model.exportarReservas();
 	}
 
 }

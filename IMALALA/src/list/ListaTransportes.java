@@ -13,14 +13,12 @@ import model.Barco;
 public class ListaTransportes {
 	
 	private ArrayList<Transporte> listaTransportes;
-	private String ruta;
-	public ListaTransportes(String ruta) {
+	public ListaTransportes() {
 		listaTransportes = new ArrayList<Transporte>();
-		this.ruta=ruta;
 	}
 	
 
-	public void llenarTransportes() {
+	public void llenarTransportes(String ruta) {
 
 		File doc = new File(ruta+"\\Aviones.txt");
 		Scanner obj;
@@ -48,7 +46,7 @@ public class ListaTransportes {
 			e.printStackTrace();
 		}
 	}
-	public void exportarTransportes() {
+	public void exportarTransportes(String ruta) {
 		
 		ArrayList<Avion> listaAviones = new ArrayList<Avion>();
 		ArrayList<Barco> listaBarcos = new ArrayList<Barco>();;
