@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -41,6 +42,7 @@ public class GestionViajes extends JFrame implements Observer {
 	}
 	
 	private void jbInit(){
+        
         setLocation(getX()+600, getY()+200);
 		this.getContentPane().setLayout(null);
 		jScrollPane1.setBounds(new Rectangle(0, 0, 3, 3));
@@ -50,25 +52,16 @@ public class GestionViajes extends JFrame implements Observer {
 
 		jButton1.setBounds(new Rectangle(42, 52, 300, 27));
 		jButton1.setText("Diseñar Viaje");
-		jButton1.addActionListener(new java.awt.event.ActionListener() 	{
-			public void actionPerformed(ActionEvent e)  {
-				jButton1_actionPerformed(e);
-			}
-		});
-		jButton2.setBounds(new Rectangle(42, 104, 300, 27));
+		jButton1.addActionListener(e->jButton1_actionPerformed(e));
+		
+        jButton2.setBounds(new Rectangle(42, 104, 300, 27));
 		jButton2.setText("Modificar viaje");
-		jButton2.addActionListener(new java.awt.event.ActionListener() 	{
-			public void actionPerformed(ActionEvent e)  {
-				jButton2_actionPerformed(e);
-			}
-		});
-		jButton3.setBounds(new Rectangle(42, 156, 300, 27));
+		jButton2.addActionListener(e->jButton2_actionPerformed(e));
+		
+        jButton3.setBounds(new Rectangle(42, 156, 300, 27));
 		jButton3.setText("Eliminar Viaje");
-		jButton3.addActionListener(new java.awt.event.ActionListener() 	{
-			public void actionPerformed(ActionEvent e)  {
-				jButton3_actionPerformed(e);
-			}
-		});
+		jButton3.addActionListener(e->jButton3_actionPerformed(e));
+
 		jButton4.setBounds(new Rectangle(42, 208, 300, 27));
 		jButton4.setText("Volver");
 		jButton4.addActionListener(e-> this.setVisible(false));
