@@ -2,13 +2,10 @@ package control;
 
 import java.awt.*;
 import javax.swing.*;
-import javax.swing.border.*;
-
 
 import view.View1;
 import view.View2;
 import view.View5;
-import model.Gestor;
 
 import java.awt.event.*;
 
@@ -24,7 +21,8 @@ public class Controller extends JFrame {
 	JButton jButton2 = new JButton();
 	JButton jButton3 = new JButton();
 	JTextField jTextField1 = new JTextField();
-	JTextField jTextField2 = new JTextField();
+	JPasswordField jPasswordField=new JPasswordField();
+	JCheckBox checkPassword=new JCheckBox("mostrar contraseña");
 	JLabel jLabel1 = new JLabel();
 	JLabel jLabel2 = new JLabel();
 	JLabel jLabel3 = new JLabel();
@@ -58,7 +56,7 @@ public class Controller extends JFrame {
 				jButton1_actionPerformed(e);
 			}
 		});
-		jButton2.setBounds(new Rectangle(80, 240, 150, 27));
+		jButton2.setBounds(new Rectangle(150, 240, 150, 27));
 		jButton2.setText("Registrarse");
 		jButton2.addActionListener(new java.awt.event.ActionListener() 	{
 			public void actionPerformed(ActionEvent e)  {
@@ -74,8 +72,10 @@ public class Controller extends JFrame {
 		});
 		jTextField1.setText("");
 		jTextField1.setBounds(new Rectangle(150, 55, 100, 31));
-		jTextField2.setText("");
-		jTextField2.setBounds(new Rectangle(150, 100, 100, 31));
+		jPasswordField.setText("");
+		jPasswordField.setBounds(new Rectangle(150, 100, 100, 31));
+		checkPassword.addActionListener(e->mostrarContraseña());
+		checkPassword.setBounds(new Rectangle(150, 145, 150, 31));
 		jLabel1.setText("Introduzca sus datos para iniciar sesion:");
 		jLabel1.setBounds(new Rectangle(41, 15, 300, 23));
 		jLabel2.setText("Id:");
@@ -85,7 +85,8 @@ public class Controller extends JFrame {
 		jLabel4.setText("Pulse el siguiente boton si quiere registrarse:");
 		jLabel4.setBounds(new Rectangle(42, 200, 300, 27));
 		this.getContentPane().add(jScrollPane1, null);
-		this.getContentPane().add(jTextField2, null);
+		this.getContentPane().add(jPasswordField, null);
+		this.getContentPane().add(checkPassword, null);
 		this.getContentPane().add(jTextField1, null);
 		this.getContentPane().add(jLabel2, null);
 		this.getContentPane().add(jLabel3, null);
@@ -96,9 +97,17 @@ public class Controller extends JFrame {
 		this.getContentPane().add(jButton3, null);
 	}
 	
+	private void mostrarContraseña() {
+		if(checkPassword.isSelected()){
+			jPasswordField.setEchoChar((char)0);
+		}else{
+			jPasswordField.setEchoChar('•');
+		}
+	}
+
 	void jButton1_actionPerformed(ActionEvent e) {
 		String id = jTextField1.getText();
-		String contrasena = jTextField2.getText();
+		String contrasena = String.valueOf(jPasswordField.getPassword());
 		if(this.model.buscarUsuarioContrasena(id, contrasena)) {
 			this.view1 = new View1(this.model,this.model.listaUsuarios.devolverUsuario(id, contrasena));
 			this.view1.setSize(475,410);

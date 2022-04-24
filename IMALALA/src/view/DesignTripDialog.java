@@ -122,7 +122,7 @@ public class DesignTripDialog extends JDialog{
         for(String id: listAloj){
             _alojamientoModel.addElement(id);
         }
-        this.setLocationRelativeTo(null);
+        this.setLocation(getX()+600, getY()+200);
 		setVisible(true);
 	
 		return _status;
