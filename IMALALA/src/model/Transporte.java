@@ -37,5 +37,8 @@ public abstract class Transporte {
 	public void setId(String id) {
 		this.id = id;
 	}
+	public void setCapacidad(String capacidad){
+	    this.capacidad = capacidad;
+	}
 
 }

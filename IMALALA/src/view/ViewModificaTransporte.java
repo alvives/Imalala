@@ -16,6 +16,8 @@ import javax.swing.JTextField;
 import control.Model;
 import control.Observer;
 import model.Alojamiento;
+import model.Avion;
+import model.Barco;
 import model.Gestor;
 import model.Viaje;
 import model.Transporte;
@@ -24,7 +26,9 @@ import model.Transporte;
 public class ViewModificaTransporte extends JFrame implements Observer {
 	Model model;
 	Gestor g;
-	Transporte ida, vuelta;
+	Transporte transporte;
+	Avion avion;
+	Barco barco;
 	JScrollPane jScrollPane1 = new JScrollPane();	
 	private JComboBox <String> idtransp;
 	private DefaultComboBoxModel <String> _idTransporte;
@@ -37,7 +41,7 @@ public class ViewModificaTransporte extends JFrame implements Observer {
 	JLabel jLabel2 = new JLabel();	
 	JLabel jLabel3 = new JLabel();
 	JLabel jLabel4 = new JLabel();
-
+	JLabel jLabel5 = new JLabel();
 	JButton jButton1 = new JButton();
 	
 
@@ -82,6 +86,8 @@ public class ViewModificaTransporte extends JFrame implements Observer {
 		jTextField2.setBounds(new Rectangle(150, 100, 100, 31));
 		jTextField3.setText("");
 		jTextField3.setBounds(new Rectangle(150, 150, 100, 31));
+		jTextField4.setText("");
+		jTextField4.setBounds(new Rectangle(150, 200, 100, 31));
 		
 		jLabel2.setText("Id del transporte:");
 		jLabel2.setBounds(new Rectangle(42, 50, 100, 32));
@@ -89,29 +95,31 @@ public class ViewModificaTransporte extends JFrame implements Observer {
 		jLabel3.setBounds(new Rectangle(42, 100, 100, 32));
 		jLabel4.setText("Capacidad:");
 		jLabel4.setBounds(new Rectangle(42, 150, 100, 32));
+		jLabel5.setText("Tipo:");
+		jLabel5.setBounds(new Rectangle(42, 200, 100, 32));
 		
 		this.getContentPane().add(jLabel1, null);
 		this.getContentPane().add(jButton1, null);
 		this.getContentPane().add(jLabel2, null);
 		this.getContentPane().add(jLabel3, null);
 		this.getContentPane().add(jLabel4, null);
+		this.getContentPane().add(jLabel5, null);
 		this.getContentPane().add(jTextField1, null);
 		this.getContentPane().add(jTextField2, null);
 		this.getContentPane().add(jTextField3, null);
-		this.getContentPane().add(idtransp, null);
+		this.getContentPane().add(jTextField4, null);
+		//this.getContentPane().add(idtransp, null);
 	}
 
 	void jButton1_actionPerformed(ActionEvent e) {
 		if (!jTextField1.getText().isEmpty()&&!jTextField2.getText().isEmpty()&&!jTextField3.getText().isEmpty()&&!jTextField4.getText().isEmpty()) {
 			String id = jTextField1.getText();
-			if(this.model.getListaViajes().buscarViaje(id)!=null){
-				String alojamiento=jTextField2.getText();
+			if(this.model.getListaTransportes().buscarTransporte(id)!=null){
+				String disponibilidad=jTextField2.getText();
+				String capacidad=jTextField3.getText();
 
-				String ida=jTextField3.getText();
-				String vuelta=jTextField3.getText();
-
-				this.model.getListaViajes().modificarViaje(this.model.getListaViajes().buscarViaje(id), this.model.getListaAlojamientos().buscarAlojamiento(alojamiento), 
-				this.model.getListaTransportes().buscarTransporte(ida), 	this.model.getListaTransportes().buscarTransporte(vuelta));;
+				//Transporte transporte, String id, String capacidad, boolean disponibilidad
+				this.model.getListaTransportes().modificarTransporte(this.model.getListaTransportes().buscarTransporte(id), id, capacidad, true);;
 				this.setVisible(false);
 
 			}else JOptionPane.showMessageDialog(new JFrame(), "Error, id del transporte incorrecto", "ERROR", JOptionPane.ERROR_MESSAGE);

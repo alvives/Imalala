@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import model.Transporte;
+import model.Viaje;
+import model.Alojamiento;
 import model.Avion;
 import model.Barco;
 
@@ -16,7 +18,19 @@ public class ListaTransportes {
 	public ListaTransportes() {
 		listaTransportes = new ArrayList<Transporte>();
 	}
-	
+	public void modificarTransporte(Transporte transporte, String id, String capacidad, boolean disponibilidad) {
+		boolean b = false;
+		int i = 0;
+		while (!b && i < listaTransportes.size()) {
+			if (listaTransportes.get(i).equals(transporte)) {
+				b = true;
+				listaTransportes.get(i).setId(id);
+				listaTransportes.get(i).setCapacidad(capacidad);
+				listaTransportes.get(i).setDisponibilidad(disponibilidad);				
+			}
+			i++;
+		}
+	}
 
 	public void llenarTransportes(String ruta) {
 
