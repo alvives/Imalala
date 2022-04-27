@@ -20,6 +20,7 @@ public class GestionTransportes extends JFrame implements Observer {
 	View4 view4;
 	View6 view6;
 	View7 view7;
+	ViewModificaTransporte viewModTransp;
 	
 	JScrollPane jScrollPane1 = new JScrollPane();	
 	JLabel jLabel1 = new JLabel();
@@ -93,7 +94,9 @@ public class GestionTransportes extends JFrame implements Observer {
 	}
 	
 	void jButton2_actionPerformed(ActionEvent e) {
-	
+		this.viewModTransp = new ViewModificaTransporte(this.model, this.g);
+		this.viewModTransp.setSize(475,410);
+		this.viewModTransp.setVisible(true);
 	}
 	
 	void jButton3_actionPerformed(ActionEvent e) {
