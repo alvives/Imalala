@@ -146,7 +146,8 @@ public class View7 extends JFrame implements Observer {
 					
 				ok.pack();
 				ok.setVisible(true);	
-				model.getListaReservas().eliminaReserva(listaReservas.get(reservaMun));			
+				model.getListaReservas().eliminaReserva(listaReservas.get(reservaMun));	
+				model.dataUpdate();		
 				setVisible(false);
 
 			}

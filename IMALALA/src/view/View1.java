@@ -24,6 +24,7 @@ public class View1 extends JFrame implements Observer {
 	
 	JScrollPane jScrollPane1 = new JScrollPane();	
 	JLabel jLabel1 = new JLabel();
+	JLabel jLabel2 = new JLabel();
 	JButton jButton1 = new JButton();
 	JButton jButton2 = new JButton();
 	JButton jButton3 = new JButton();
@@ -94,11 +95,13 @@ public class View1 extends JFrame implements Observer {
 			}
 		});
 		
-		
 		jLabel1.setText("Bienvenido " + this.u.getNombre() + " " + this.u.getApellido() + ", pulse la accion que desee realizar:");
-		jLabel1.setBounds(new Rectangle(41, 15, 400, 23));
+		jLabel2.setText(" Reservas actuales: " + model.getListaReservas().getReservasUsuario(this.u).size());
+		jLabel1.setBounds(new Rectangle(41, 20, 400, 23));
+		jLabel2.setBounds(new Rectangle(330, 5, 400, 23));
 		
 		this.getContentPane().add(jLabel1, null);
+		this.getContentPane().add(jLabel2, null);
 		this.getContentPane().add(jButton1, null);
 		this.getContentPane().add(jButton2, null);
 		this.getContentPane().add(jButton3, null);
@@ -143,7 +146,7 @@ public class View1 extends JFrame implements Observer {
 	
 	@Override
 	public void dataUpdate(Model model) {
-		
+		jLabel2.setText(" Reservas actuales: " + model.getListaReservas().getReservasUsuario(this.u).size());
 	}
 	
 

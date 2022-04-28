@@ -1,5 +1,6 @@
 package control;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import list.ListaAlojamientos;
 import list.ListaReservas;
@@ -92,6 +93,13 @@ public class Model {
 	
 	public void removeObserver(Observer o) 	{
 		observer.remove(o);
+	}
+
+	public void dataUpdate() {
+		for (Iterator i = observer.iterator(); i.hasNext(); ) {
+			Observer o = (Observer)(i.next());
+			o.dataUpdate(this);
+		}
 	}
 
 	public void exportarUsuarios() {

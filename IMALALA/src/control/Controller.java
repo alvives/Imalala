@@ -112,6 +112,7 @@ public class Controller extends JFrame {
 			this.view1 = new View1(this.model,this.model.listaUsuarios.devolverUsuario(id, contrasena));
 			this.view1.setSize(475,410);
 			this.view1.setVisible(true);
+			this.model.registerObserver(view1);
 		} else if(model.gestor.getNombre().equals(id) && model.gestor.getContrasena().equals(contrasena)){
 			this.view5 = new View5(this.model,this.model.gestor);
 			this.view5.setSize(475,410);

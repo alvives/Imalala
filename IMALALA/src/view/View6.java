@@ -76,7 +76,7 @@ public class View6 extends JFrame implements Observer {
 				int num = model.getListaReservas().getListaReservas().size()+1;
 				
 				model.getListaReservas().anadeReserva(new Reserva("reserva"+ num, u, listaViajes.get(x),false));
-	
+				model.dataUpdate();		
 
 			}
 
