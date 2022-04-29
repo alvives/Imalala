@@ -15,12 +15,8 @@ import model.Gestor;
 public class GestionTransportes extends JFrame implements Observer {
 	Model model;
 	Gestor g;
-	
-	View3 view3;
-	View4 view4;
-	View6 view6;
-	View7 view7;
-	ViewModificaTransporte viewModTransp;
+
+	VistaAnadirTransporte vistaAnadirTransporte;
 	
 	JScrollPane jScrollPane1 = new JScrollPane();	
 	JLabel jLabel1 = new JLabel();
@@ -90,13 +86,13 @@ public class GestionTransportes extends JFrame implements Observer {
 	}
 
     void jButton1_actionPerformed(ActionEvent e) {
-		
+		this.vistaAnadirTransporte = new VistaAnadirTransporte(this.model);
+		this.vistaAnadirTransporte.setSize(475,410);
+		this.vistaAnadirTransporte.setVisible(true);
 	}
 	
 	void jButton2_actionPerformed(ActionEvent e) {
-		this.viewModTransp = new ViewModificaTransporte(this.model, this.g);
-		this.viewModTransp.setSize(475,410);
-		this.viewModTransp.setVisible(true);
+
 	}
 	
 	void jButton3_actionPerformed(ActionEvent e) {

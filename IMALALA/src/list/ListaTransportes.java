@@ -6,6 +6,10 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 import model.Transporte;
 import model.Viaje;
 import model.Alojamiento;
@@ -136,4 +140,24 @@ public class ListaTransportes {
 	public List<Transporte> getListaTransp(){
 		return listaTransportes;
 	}
+
+
+	public void anadirTransporte (Transporte tpt) {
+		boolean encontrado = false;
+		int i = 0;
+		
+		while(!encontrado && i < listaTransportes.size()) {
+			if(listaTransportes.get(i).getId().equals(tpt.getId()))
+				encontrado = true;
+			i++;
+		}
+		
+		if(!encontrado) {
+			listaTransportes.add(tpt);
+		}
+		else {
+			JOptionPane.showMessageDialog(new JFrame(), "Error, ya existe un transporte con el mismo identificador", "ERROR", JOptionPane.ERROR_MESSAGE);		
+		}		
+	}
+
 }
