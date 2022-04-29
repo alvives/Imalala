@@ -17,6 +17,7 @@ public class GestionTransportes extends JFrame implements Observer {
 	Gestor g;
 
 	VistaAnadirTransporte vistaAnadirTransporte;
+	VistaModificarTransporte vistaModificarTransporte;
 	VistaEliminarTransporte vistaEliminarTransporte;
 	
 	JScrollPane jScrollPane1 = new JScrollPane();	
@@ -93,7 +94,9 @@ public class GestionTransportes extends JFrame implements Observer {
 	}
 	
 	void jButton2_actionPerformed(ActionEvent e) {
-
+		this.vistaModificarTransporte = new VistaModificarTransporte(this.model);
+		this.vistaModificarTransporte.setSize(475,410);
+		this.vistaModificarTransporte.setVisible(true);
 	}
 	
 	void jButton3_actionPerformed(ActionEvent e) {
