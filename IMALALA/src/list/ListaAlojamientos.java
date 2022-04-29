@@ -118,4 +118,21 @@ public class ListaAlojamientos {
 			i++;
 		}
 	}
+
+
+	public void modificarAlojamiento (Alojamiento a, String capacidad, String direccion, String hotel, String ciudad) {
+		boolean b = false;
+		int i = 0;
+		while (!b && i < listaAlojamientos.size()) {
+			if (listaAlojamientos.get(i).getId().equals(a.getId())) {
+				b = true;
+				listaAlojamientos.get(i).setCapacidad(capacidad);
+				listaAlojamientos.get(i).setDireccion(direccion);
+				listaAlojamientos.get(i).setNombreHotel(hotel);		
+				listaAlojamientos.get(i).setCiudad(ciudad);						
+			}
+			i++;
+		}
+	}
+	
 }

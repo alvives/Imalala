@@ -37,7 +37,7 @@ public class ListaViajes {
 		boolean b = false;
 		int i = 0;
 		while (!b && i < listaViajes.size()) {
-			if (listaViajes.get(i).equals(v)) {
+			if (listaViajes.get(i).getId().equals(v.getId())) {
 				b = true;
 				listaViajes.get(i).setAlojamiento(alojammiento);
 				listaViajes.get(i).setTransporteIda(transporteIda);
@@ -158,5 +158,19 @@ public class ListaViajes {
 		}
 		return encont;
     }
+
+	public void modificarAlojamiento (Alojamiento alojamiento) {
+		int i = 0;
+
+		while (i < listaViajes.size()) {
+			if (listaViajes.get(i).getAlojamiento().getId().equals(alojamiento.getId())) {
+				listaViajes.get(i).getAlojamiento().setCapacidad(alojamiento.getCapacidad());				
+				listaViajes.get(i).getAlojamiento().setDireccion(alojamiento.getDireccion());				
+				listaViajes.get(i).getAlojamiento().setNombreHotel(alojamiento.getNombreHotel());				
+				listaViajes.get(i).getAlojamiento().setCiudad(alojamiento.getCiudad());		
+			}
+			i++;
+		}
+	}
 	
 }

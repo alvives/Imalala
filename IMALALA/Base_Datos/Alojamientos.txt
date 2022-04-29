@@ -1,4 +1,4 @@
-alojamiento1-20-Calle inventada 1-NH-Madrid
+alojamiento1-200-calle ajedrez-reina-Burgos
 alojamiento2-20-Calle Cruz 23-MyHotel-Paris
 alojamiento3-50-calle cornamenta 2-Hotel san miguel-Granada
 alojamiento4-300-calle verde-Gran Hotel-Barcelona
