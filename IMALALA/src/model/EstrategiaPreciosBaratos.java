@@ -3,7 +3,7 @@ package model;
 import java.util.ArrayList;
 
 public class EstrategiaPreciosBaratos implements EstrategiaPrecios {
-    private double precio=100;
+    private double precio=500;
     public EstrategiaPreciosBaratos(){
     }
 

@@ -21,6 +21,7 @@ import javax.swing.JTable;
 import control.Model;
 import control.Observer;
 import model.Viaje;
+import model.EstrategiaPrecios;
 import model.Gestor;
 import model.Reserva;
 import model.Usuario;
@@ -39,6 +40,7 @@ public class View6 extends JFrame implements Observer {
 	//ArrayList<Reserva> listaReservas;
     ArrayList<Viaje> listaViajes;
 	int viajeMun;
+	EstrategiaPrecios estrategia;
 	
 	/*JScrollPane jScrollPane1 = new JScrollPane();	
 	JLabel jLabel1 = new JLabel();
@@ -47,13 +49,13 @@ public class View6 extends JFrame implements Observer {
 	ArrayList<JButton> listajButton = new ArrayList<JButton>();*/
 	
 	
-	public View6(Model model, Usuario u) { 
+	public View6(Model model, Usuario u, EstrategiaPrecios estrategia) { 
 
 		try{
 			this.model = model;
 			this.u = u;
-			//listaReservas = model.getListaReservas();//.getReservasUsuario(u);
-            listaViajes = model.getListaViajes().getViajes();
+			this.estrategia = estrategia;
+            listaViajes = estrategia.mostrarViajes(model.getListaViajes().getViajes());
 			setTitle("Reserva Viajes");
 			panel = new JPanel(new BorderLayout());	
 			panel1 = new JPanel(new BorderLayout());	

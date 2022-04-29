@@ -13,6 +13,9 @@ import control.Observer;
 import model.Usuario;
 import model.Gestor;
 
+
+
+//Ventana gestor
 public class View5 extends JFrame implements Observer {
 	Model model;
 	Usuario u;
