@@ -16,6 +16,9 @@ import model.EstrategiaPreciosBaratos;
 import model.EstrategiaPreciosCaros;
 import model.Usuario;
 
+
+
+//Elegir tipo de viaje para reservar
 public class View9 extends JFrame  {
     Model model;
 	Usuario u;

@@ -145,5 +145,18 @@ public class ListaViajes {
 		}
 		return (listaViajes.get(i-1));
 	}
+
+    public boolean contieneAlojamiento(Alojamiento alojamiento) {
+		boolean encont = false;
+		int i = 0;
+
+		while (!encont && i < listaViajes.size()) {
+			if (listaViajes.get(i).getAlojamiento().getId().equals(alojamiento.getId())) {
+				encont=true;
+			}
+			i++;
+		}
+		return encont;
+    }
 	
 }

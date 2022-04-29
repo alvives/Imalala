@@ -6,6 +6,10 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 import model.Alojamiento;
 
 public class ListaAlojamientos {
@@ -80,7 +84,38 @@ public class ListaAlojamientos {
 		return (listaAlojamientos.get(i-1));
 	}
 
-	public List<Alojamiento> getListaAlojamiento(){
+	public ArrayList<Alojamiento> getListaAlojamiento(){
 		return listaAlojamientos;
+	}
+
+	public void anadirAlojamiento (Alojamiento al) {
+		boolean encontrado = false;
+		int i = 0;
+		
+		while(!encontrado && i < listaAlojamientos.size()) {
+			if(listaAlojamientos.get(i).getId().equals(al.getId()))
+				encontrado = true;
+			i++;
+		}
+		
+		if(!encontrado) {
+			listaAlojamientos.add(al);
+		}
+		else {
+			JOptionPane.showMessageDialog(new JFrame(), "Error, ya existe un alojamiento con el mismo identificador", "ERROR", JOptionPane.ERROR_MESSAGE);		
+		}		
+	}
+
+
+	public void eliminarAlojamiento(Alojamiento alojamiento) {
+		boolean b = false;
+		int i = 0;
+		while (!b || i < listaAlojamientos.size()) {
+			if (listaAlojamientos.get(i).getId().equals(alojamiento.getId())) {
+				b = true;
+				listaAlojamientos.remove(i);
+			}
+			i++;
+		}
 	}
 }

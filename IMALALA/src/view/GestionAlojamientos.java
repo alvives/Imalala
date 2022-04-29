@@ -27,7 +27,8 @@ public class GestionAlojamientos extends JFrame implements Observer {
 	JButton jButton2 = new JButton();
 	JButton jButton3 = new JButton();
     JButton jButton4 = new JButton();
-    //View9 view9 = new View9();
+    VistaAnadirAlojamiento vista1;
+	VistaEliminarAlojamiento vista3;
     //View10 view9 = new View9();
     //View11 view9 = new View9();
 	
@@ -89,16 +90,20 @@ public class GestionAlojamientos extends JFrame implements Observer {
 		this.getContentPane().add(jButton4, null);
 	}
 
-    void jButton1_actionPerformed(ActionEvent e) {
-		
+	void jButton1_actionPerformed(ActionEvent e) {
+		this.vista1 = new VistaAnadirAlojamiento(this.model);
+		this.vista1.setSize(475,410);
+		this.vista1.setVisible(true);
 	}
 	
 	void jButton2_actionPerformed(ActionEvent e) {
-	
+
 	}
 	
 	void jButton3_actionPerformed(ActionEvent e) {
-		
+		this.vista3 = new VistaEliminarAlojamiento(this.model);
+		this.vista3.setSize(475,410);
+		this.vista3.setVisible(true);
 	}
 
     void jButton4_actionPerformed(ActionEvent e) {
