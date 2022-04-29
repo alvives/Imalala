@@ -32,7 +32,7 @@ public class VistaEliminarTransporte extends JFrame {
 	JTable table;
 	TModelTransportes tableModel;
 	ArrayList<Transporte> listaTransportes;
-	int alojamientoNum;
+	int transporteNum;
 	
 	/*JScrollPane jScrollPane1 = new JScrollPane();	
 	JLabel jLabel1 = new JLabel();
@@ -46,8 +46,8 @@ public class VistaEliminarTransporte extends JFrame {
 
 		try{
 			this.model = model;
-			listaAlojamientos = model.getListaAlojamientos().getListaAlojamiento();
-			setTitle("Eliminar alojamiento");
+			listaTransportes = model.getListaTransportes().getListaTransp();
+			setTitle("Eliminar transporte");
 			panel = new JPanel(new BorderLayout());	
 			panel1 = new JPanel(new BorderLayout());	
 			jbInit();
@@ -59,7 +59,7 @@ public class VistaEliminarTransporte extends JFrame {
 	
 	private void jbInit() throws Exception 	{
 
-		panel.add(new JLabel( "Seleccione el alojamiento que desea eliminar y pulse 'eliminar' "),BorderLayout.PAGE_START);
+		panel.add(new JLabel( "Seleccione el transporte que desea eliminar y pulse 'eliminar' "),BorderLayout.PAGE_START);
 		addJtable();
 		addCombobox();
 		addBotton();
@@ -75,7 +75,7 @@ public class VistaEliminarTransporte extends JFrame {
 	private void addJtable() {
 
 		table = new JTable();
-		tableModel = new TModelAlojamientos(listaAlojamientos, model); 
+		tableModel = new TModelTransportes(listaTransportes, model); 
 		table.setModel(tableModel);
 		table.setRowSelectionAllowed(true);
 		table.setColumnSelectionAllowed(true);
@@ -90,10 +90,8 @@ public class VistaEliminarTransporte extends JFrame {
 
 		Vector<String> valores = new Vector<String>();
 
-		for(int i=0;i<listaAlojamientos.size();i++) {
-
-			valores.add(listaAlojamientos.get(i).getId());
-
+		for(int i=0;i<listaTransportes.size();i++) {
+			valores.add(listaTransportes.get(i).getId());
 		}
 
 		JComboBox<String> reservaList = new JComboBox<String>(valores);
@@ -101,12 +99,12 @@ public class VistaEliminarTransporte extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				alojamientoNum = reservaList.getSelectedIndex();														
+				transporteNum = reservaList.getSelectedIndex();														
 				
 			}
 		});
 		JPanel CPanel =new JPanel();
-		CPanel.add(new JLabel("Selecciona el alojamiento que quieres eliminar"));
+		CPanel.add(new JLabel("Selecciona el transporte que quieres eliminar"));
 		CPanel.add(reservaList);
 		panel1.add(CPanel,BorderLayout.PAGE_START);
 	}
@@ -120,12 +118,12 @@ public class VistaEliminarTransporte extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				if(!model.getListaViajes().contieneAlojamiento(model.getListaAlojamientos().getListaAlojamiento().get(alojamientoNum))){
+				if(!model.getListaViajes().contieneTransporte(model.getListaTransportes().getListaTransportes().get(transporteNum))) {
                     JDialog ok=new JDialog();
-                    ok.setTitle("Alojamiento eliminado");
+                    ok.setTitle("Transporte eliminado");
                     ok.setLocation(getX()+300, getY()+200);
                     JPanel okpanel = new JPanel(new BorderLayout());
-                    okpanel.add(new JLabel("Has eliminado el alojamiento "+listaAlojamientos.get(alojamientoNum).getId()),BorderLayout.PAGE_START);
+                    okpanel.add(new JLabel("Has eliminado el transporte "+listaTransportes.get(transporteNum).getId()),BorderLayout.PAGE_START);
 
                     JButton okButton =new JButton("OK");
                     okpanel.add(okButton,BorderLayout.CENTER);
@@ -148,16 +146,16 @@ public class VistaEliminarTransporte extends JFrame {
                     ok.pack();
                     ok.setVisible(true);	
 
-                    model.getListaAlojamientos().eliminarAlojamiento(listaAlojamientos.get(alojamientoNum));
+                    model.getListaTransportes().eliminarTransporte(listaTransportes.get(transporteNum));
 
                     setVisible(false);
                 }
                 else{
                     JDialog ok=new JDialog();
-                    ok.setTitle("Error: No se puede eliminar el alojamiento");
+                    ok.setTitle("Error: No se puede eliminar el transporte");
                     ok.setLocation(getX()+300, getY()+200);
                     JPanel okpanel = new JPanel(new BorderLayout());
-                    okpanel.add(new JLabel("No se puede eliminar el alojamiento " + model.getListaAlojamientos().getListaAlojamiento().get(alojamientoNum).getId()), BorderLayout.PAGE_START);
+                    okpanel.add(new JLabel("No se puede eliminar el transporte " + model.getListaTransportes().getListaTransportes().get(transporteNum).getId()), BorderLayout.PAGE_START);
                     JButton okButton =new JButton("VOLVER");
                     okpanel.add(okButton,BorderLayout.CENTER);
                     okButton.addActionListener(new ActionListener() {

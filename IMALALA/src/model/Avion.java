@@ -8,8 +8,7 @@ public class Avion extends Transporte{
 	}
 
 	@Override
-	public String getTipoTransporte() {
-		
+	public String getTipoTransporte() {		
 		return this.tipo;
 	}
 	

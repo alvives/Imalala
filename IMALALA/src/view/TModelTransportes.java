@@ -16,9 +16,8 @@ class TModelTransportes extends AbstractTableModel{
     ArrayList<Transporte> listaTransportes;
 	
 	public TModelTransportes (ArrayList<Transporte> listaTransportes, Model model) {
-		
-        this.listaTransportes = listaTransportes;
-      this.model = model;
+		this.listaTransportes = listaTransportes;
+      	this.model = model;
 	}
 
     @Override
@@ -34,12 +33,12 @@ class TModelTransportes extends AbstractTableModel{
 	@Override
 	public int getColumnCount() {
 		// TODO Auto-generated method stub
-		return 6;
+		return 3;
 	}
 
 	@Override
 	public String getColumnName(int column) {
-		String keys []= {"Id transporte", "Capacidad", "tipo"};
+		String keys []= {"Id transporte", "Capacidad", "Tipo"};
 
 		return keys[column];
 	}
@@ -47,27 +46,17 @@ class TModelTransportes extends AbstractTableModel{
 	public Object getValueAt(int rowIndex, int columnIndex) {
 		// TODO Auto-generated method stub
 
-		Iterator<Alojamiento> iter = listaAlojamientos.iterator();
-		Alojamiento alojamiento=iter.next();
+		Iterator<Transporte> iter = listaTransportes.iterator();
+		Transporte transporte=iter.next();
 		for(int i=0;i<rowIndex;i++) {
-			alojamiento = iter.next();
+			transporte = iter.next();
 		}
 		if(columnIndex==0) {
-			return alojamiento.getId(); 
+			return transporte.getId(); 
 		}else if(columnIndex==1) {
-			return alojamiento.getCapacidad();
+			return transporte.getCapacidad();
 		}else if(columnIndex==2) {
-			return alojamiento.getDireccion();
-		}else if(columnIndex==3) {
-			return alojamiento.getNombreHotel();
-		}else if(columnIndex==4) {
-			return alojamiento.getCiudad();
-		} else if(columnIndex == 5) {
-			if(model.getListaViajes().contieneAlojamiento(alojamiento)){
-				return "No";
-			} else {
-				return "Sí";
-			}
+			return transporte.getTipoTransporte();
 		}
 
 		return null;

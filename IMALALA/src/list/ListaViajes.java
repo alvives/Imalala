@@ -173,4 +173,16 @@ public class ListaViajes {
 		}
 	}
 	
+	public boolean contieneTransporte(Transporte transporte) {
+		boolean encont = false;
+		int i = 0;
+
+		while (!encont && i < listaViajes.size()) {
+			if (listaViajes.get(i).getTransporteIda().getId().equals(transporte.getId()) || listaViajes.get(i).getTransporteVuelta().getId().equals(transporte.getId())) {
+				encont=true;
+			}
+			i++;
+		}
+		return encont;
+    }
 }

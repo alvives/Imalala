@@ -11,8 +11,6 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import model.Transporte;
-import model.Viaje;
-import model.Alojamiento;
 import model.Avion;
 import model.Barco;
 
@@ -22,7 +20,7 @@ public class ListaTransportes {
 	public ListaTransportes() {
 		listaTransportes = new ArrayList<Transporte>();
 	}
-	public void modificarTransporte(Transporte transporte, String id, String capacidad, boolean disponibilidad) {
+	public void modificarTransporte(Transporte transporte, String id, String capacidad) {
 		boolean b = false;
 		int i = 0;
 		while (!b && i < listaTransportes.size()) {
@@ -30,7 +28,6 @@ public class ListaTransportes {
 				b = true;
 				listaTransportes.get(i).setId(id);
 				listaTransportes.get(i).setCapacidad(capacidad);
-				listaTransportes.get(i).setDisponibilidad(disponibilidad);				
 			}
 			i++;
 		}
@@ -137,7 +134,7 @@ public class ListaTransportes {
 		
 	}
 
-	public List<Transporte> getListaTransp(){
+	public ArrayList<Transporte> getListaTransp(){
 		return listaTransportes;
 	}
 
@@ -158,6 +155,21 @@ public class ListaTransportes {
 		else {
 			JOptionPane.showMessageDialog(new JFrame(), "Error, ya existe un transporte con el mismo identificador", "ERROR", JOptionPane.ERROR_MESSAGE);		
 		}		
+	}
+	public void eliminarTransporte(Transporte transporte) {
+		boolean b = false;
+		int i = 0;
+		while (!b || i < listaTransportes.size()) {
+			if (listaTransportes.get(i).getId().equals(transporte.getId())) {
+				b = true;
+				listaTransportes.remove(i);
+			}
+			i++;
+		}
+	}
+
+	public ArrayList<Transporte> getListaTransportes(){
+		return listaTransportes;
 	}
 
 }
