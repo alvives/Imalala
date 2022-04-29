@@ -1,3 +1,8 @@
 reserva1-a-viaje1-false
 reserva2-a-viaje2-false
 reserva3-b-viaje3-false
+reserva3-a-viaje1-true
+reserva4-a-viaje1-true
+reserva5-a-viaje1-true
+reserva6-a-viaje1-true
+reserva7-a-viaje1-true

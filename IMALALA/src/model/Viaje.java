@@ -81,6 +81,11 @@ public class Viaje {
 	}
 	
 	public void eliminarReserva() {
+		this.reservasDisponibles++;
+	}
+
+	public void anadirReserva() {
 		this.reservasDisponibles--;
 	}
+
 }
