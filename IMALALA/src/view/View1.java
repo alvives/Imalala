@@ -58,7 +58,7 @@ public class View1 extends JFrame implements Observer {
 				jButton1_actionPerformed(e);
 			}
 		});
-		jButton2.setBounds(new Rectangle(42, 52, 300, 27));
+		jButton2.setBounds(new Rectangle(42, 100, 300, 27));
 		jButton2.setText("Consultar mis reservas");
 		jButton2.addActionListener(new java.awt.event.ActionListener() 	{
 			public void actionPerformed(ActionEvent e)  {
