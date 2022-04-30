@@ -26,6 +26,7 @@ public class View5 extends JFrame implements Observer {
 	JButton jButton1 = new JButton();
 	JButton jButton2 = new JButton();
 	JButton jButton3 = new JButton();
+	JButton jButton4 = new JButton();
 	private GestionAlojamientos gestionAlojamiento;
 	private GestionTransportes gestionTransporte;
 	private GestionViajes gestionViajes;
@@ -74,6 +75,14 @@ public class View5 extends JFrame implements Observer {
 			}
 		});
 
+		jButton4.setBounds(new Rectangle(42, 200, 300, 27));
+		jButton4.setText("Cerrar sesión");
+		jButton4.addActionListener(new java.awt.event.ActionListener() 	{
+			public void actionPerformed(ActionEvent e)  {
+				jButton4_actionPerformed(e);
+			}
+		});
+
 		
 		jLabel1.setText("Bienvenido gestor, pulse la accion que desee realizar:");
 		jLabel1.setBounds(new Rectangle(41, 15, 400, 23));
@@ -82,6 +91,7 @@ public class View5 extends JFrame implements Observer {
 		this.getContentPane().add(jButton1, null);
 		this.getContentPane().add(jButton2, null);
 		this.getContentPane().add(jButton3, null);
+		this.getContentPane().add(jButton4, null);
 	}
 
 	private void jButton1_actionPerformed(ActionEvent e) {
@@ -106,6 +116,10 @@ public class View5 extends JFrame implements Observer {
 		this.gestionTransporte.setVisible(true);
 		this.model.registerObserver(gestionTransporte);
 
+	}
+
+	void jButton4_actionPerformed(ActionEvent e) {
+		this.setVisible(false);
 	}
 
 	@Override
