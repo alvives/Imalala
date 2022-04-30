@@ -22,6 +22,7 @@ public class GestionTransportes extends JFrame implements Observer {
 	
 	JScrollPane jScrollPane1 = new JScrollPane();	
 	JLabel jLabel1 = new JLabel();
+	JLabel jLabel2 = new JLabel();
 	JButton jButton1 = new JButton();
 	JButton jButton2 = new JButton();
 	JButton jButton3 = new JButton();
@@ -78,8 +79,11 @@ public class GestionTransportes extends JFrame implements Observer {
 		
 		jLabel1.setText("Elija la acción que desea realizar:");
 		jLabel1.setBounds(new Rectangle(41, 15, 400, 23));
-		
+		jLabel2.setText("Transportes actuales: " + model.getListaTransportes().getListaTransportes().size());        
+		jLabel2.setBounds(new Rectangle(300, 5, 400, 23));
+
 		this.getContentPane().add(jLabel1, null);
+		this.getContentPane().add(jLabel2, null);
 		this.getContentPane().add(jButton1, null);
 		this.getContentPane().add(jButton2, null);
 		this.getContentPane().add(jButton3, null);
@@ -108,10 +112,9 @@ public class GestionTransportes extends JFrame implements Observer {
     void jButton4_actionPerformed(ActionEvent e) {
 		this.setVisible(false);
 	}
-    @Override
+	@Override
     public void dataUpdate(Model model) {
-        // TODO Auto-generated method stub
-        
+		jLabel2.setText("Transportes actuales: " + model.getListaTransportes().getListaTransportes().size());        
     }
 
 }

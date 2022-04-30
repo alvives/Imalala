@@ -147,6 +147,7 @@ public class VistaEliminarTransporte extends JFrame {
                     ok.setVisible(true);	
 
                     model.getListaTransportes().eliminarTransporte(listaTransportes.get(transporteNum));
+					model.dataUpdate();
 
                     setVisible(false);
                 }

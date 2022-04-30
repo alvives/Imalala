@@ -86,6 +86,8 @@ public class VistaAnadirBarco extends JFrame {
 			String capacidad = jTextField2.getText();
 			
 			this.model.getListaTransportes().anadirTransporte(new Barco(id,capacidad));
+			model.dataUpdate();
+
 			this.setVisible(false);
 		}else {
 			JOptionPane.showMessageDialog(new JFrame(), "Error, hay campos vacios", "ERROR", JOptionPane.ERROR_MESSAGE);		

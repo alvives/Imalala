@@ -25,6 +25,7 @@ public class GestionViajes extends JFrame implements Observer {
 	
 	JScrollPane jScrollPane1 = new JScrollPane();	
 	JLabel jLabel1 = new JLabel();
+	JLabel jLabel2 = new JLabel();
 	JButton jButton1 = new JButton();
 	JButton jButton2 = new JButton();
 	JButton jButton3 = new JButton();
@@ -44,6 +45,8 @@ public class GestionViajes extends JFrame implements Observer {
 		
         jLabel1.setText("Elija la acción que desea realizar:");
         jLabel1.setBounds(new Rectangle(41, 15, 400, 23));
+		jLabel2.setText("Viajes actuales: " + model.getListaViajes().getViajes().size());
+		jLabel2.setBounds(new Rectangle(330, 5, 400, 23));
 
 		jButton1.setBounds(new Rectangle(42, 52, 300, 27));
 		jButton1.setText("Diseñar Viaje");
@@ -62,6 +65,7 @@ public class GestionViajes extends JFrame implements Observer {
 		jButton4.addActionListener(e-> this.setVisible(false));
 		
 		this.getContentPane().add(jLabel1, null);
+		this.getContentPane().add(jLabel2, null);
 		this.getContentPane().add(jButton1, null);
 		this.getContentPane().add(jButton2, null);
 		this.getContentPane().add(jButton3, null);
@@ -128,8 +132,7 @@ public class GestionViajes extends JFrame implements Observer {
 
     @Override
     public void dataUpdate(Model model) {
-        // TODO Auto-generated method stub
-        
+		jLabel2.setText("Viajes actuales: " + model.getListaViajes().getViajes().size());        
     }
 
 }

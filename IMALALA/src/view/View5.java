@@ -88,26 +88,32 @@ public class View5 extends JFrame implements Observer {
 		this.gestionViajes =new GestionViajes(this.model, this.g);
 		this.gestionViajes.setSize(475,410);
 		this.gestionViajes.setVisible(true);
+		this.model.registerObserver(gestionViajes);
+
 	}
 
 	void jButton2_actionPerformed(ActionEvent e) {
 		this.gestionAlojamiento = new GestionAlojamientos(this.model, this.g);
 		this.gestionAlojamiento.setSize(475,410);
 		this.gestionAlojamiento.setVisible(true);
+		this.model.registerObserver(gestionAlojamiento);
+
 	}
 
 	void jButton3_actionPerformed(ActionEvent e) {
 		this.gestionTransporte = new GestionTransportes(this.model, this.g);
 		this.gestionTransporte.setSize(475,410);
 		this.gestionTransporte.setVisible(true);
+		this.model.registerObserver(gestionTransporte);
+
 	}
-	
+
 	@Override
 	public void dataUpdate(Model model) {
 		// TODO Auto-generated method stub
 		
 	}
 	
-
+	
 	
 }
