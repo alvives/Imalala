@@ -1,95 +1,75 @@
 package launcher;
 //import Usuario;
 
-import java.util.Scanner;
-
 import javax.swing.SwingUtilities;
 
-import model.Usuario;
 import control.Controller;
-import list.ListaUsuarios;
+import java.awt.*;
+import javax.swing.*;
 
-import java.sql.*;
+import view.View1;
+import view.View2;
+import view.View5;
+
+import java.awt.event.*;
+import java.security.cert.CertPath;
 
 public class Main {
 
-	public static void main(String[] args) {
-        /*System.out.println("Bienvenido a Imalala SA, la mejor agencia de viajes");
-        ListaUsuarios listaUsuarios = new ListaUsuarios("");
-        //listaUsuarios.anadirUsuario(new Usuario());
-        
-        System.out.println("Introduzca su id de usuario");
-        Scanner in = new Scanner(System.in);
-        String s = in.nextLine();
-        if(listaUsuarios.buscarUsuario(s)) {
-        	System.out.println("Id correcto, introduzca su password");
-        	String c = in.nextLine();
-        	if(listaUsuarios.buscarUsuarioContrasena(s, c)) {
-            	System.out.println("Password correcta, bienvenido");
-        	} else {
-        		System.out.println("Password incorrecta");
-        	}
-        }
-        else{
-        	System.out.println("Id incorrecto, introduzca datos para registrarse");
+        public static void main(String[] args) {
 
-        };
-        
-
-        try
-        {
-           Class.forName("com.mysql.jdbc.Driver");  
-           Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","");  
-           Statement stmt=con.createStatement();  
-
-
-        // create our mysql database connection
-        //String myDriver = "com.mysql.jdbc.Driver"; //com.mysql.jdbc.Driver o org.gjt.mm.mysql.Driver
-        //String myUrl = "jdbc:mysql://localhost:3306/test";
-        //Class.forName(myDriver);
-        //Connection conn = DriverManager.getConnection(myUrl, "root", "");
-        
-        
-        // our SQL SELECT query. 
-        // if you only need a few columns, specify them by name instead of using "*"
-        String query = "SELECT * FROM usuarios";
-
-        // create the java statement
-        Statement st = conn.createStatement();
-        
-        // execute the query, and get a java resultset
-        ResultSet rs = st.executeQuery(query);
-        
-        // iterate through the java resultset
-        while (rs.next())
-        {
-                
-                String id =  rs.getString("id");
-                String contrasena =  rs.getString("contrasena");
-                String nombre =  rs.getString("nombre");
-                String apellido =  rs.getString("apellido");
-                String tlf =  rs.getString("tlf");
-                String dni =  rs.getString("dni");
-                
-                listaUsuarios.anadirUsuario(new Usuario(id, contrasena, nombre, apellido, tlf, dni));
-       }
-        st.close();
-        }
-
-        catch (Exception e)
-        {
-                System.err.println("Fail to connect database =( ! ");
-                System.err.println(e.getMessage());
-        }*/
-        
-        SwingUtilities.invokeLater(new Runnable() {
-                @Override
-                public void run() {        
-                        Controller c = new Controller();
-                        c.setSize(475,410);
-                        c.setVisible(true);
-                }
+                SwingUtilities.invokeLater(new Runnable() {
+                        @Override
+                        public void run() {
+                                createAndShowGUI();
+                                
+                        }
                 });
+
+        }
+
+        private static void createAndShowGUI() {
+
+		JFrame frame = new JFrame("Bienvenido");
+		JLabel label = new JLabel(new ImageIcon("IMALALA\\Imagen\\titulo.png"));
+
+		frame.setVisible(true);
+		frame.setSize(1300, 550);
+		frame.setLocation(400, 200);
+
+		frame.add(label, BorderLayout.PAGE_START);
+		JPanel panel = new JPanel(new FlowLayout());		
+		panel.add( new JLabel(new ImageIcon("IMALALA\\Imagen\\viaje1.png")));
+		panel.add( new JLabel(new ImageIcon("IMALALA\\Imagen\\viaje2.png")));
+		panel.add( new JLabel(new ImageIcon("IMALALA\\Imagen\\viaje3.png")));
+		
+		
+
+		frame.add(panel,BorderLayout.CENTER);
+
+		JPanel panel1 = new JPanel(new FlowLayout());
+		JButton boton = new JButton();		
+		boton.setIcon(loadImage("IMALALA\\Imagen\\boton.png"));	
+		boton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				Controller c = new Controller();
+                                c.setSize(475, 410);
+                                c.setVisible(true);
+                                frame.setVisible(false);
+			}
+
+		});
+		panel1.add(boton);
+		frame.add(panel1,BorderLayout.PAGE_END);
+
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
+	
+	protected static ImageIcon loadImage(String path) {
+        return new ImageIcon(Toolkit.getDefaultToolkit().createImage(path));
+    } 
 
 }
