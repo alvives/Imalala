@@ -110,7 +110,7 @@ public class GestionViajes extends JFrame implements Observer {
 				status=dialog.open(idTransp, idAlojamientos);
 			}else{
 				Viaje viajeCreado=new Viaje(dialog.getIdViaje(),aloj, ida, vuelta, dialog.getReservas(), dialog.getPrecio());
-				model.getListaViajes().insertarViaje(viajeCreado);
+				model.anadirViaje(viajeCreado);
 				status=0;
 			}
 		}

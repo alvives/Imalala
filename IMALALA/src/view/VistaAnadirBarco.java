@@ -85,8 +85,7 @@ public class VistaAnadirBarco extends JFrame {
 			String id = jTextField1.getText();
 			String capacidad = jTextField2.getText();
 			
-			this.model.getListaTransportes().anadirTransporte(new Barco(id,capacidad));
-			model.dataUpdate();
+			this.model.anadirTransporte(new Barco(id,capacidad));
 
 			this.setVisible(false);
 		}else {

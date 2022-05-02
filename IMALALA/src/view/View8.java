@@ -22,9 +22,6 @@ import control.Model;
 import control.Observer;
 import model.Viaje;
 import model.Gestor;
-import model.Reserva;
-import list.ListaReservas;
-import list.ListaViajes;
 
 
 public class View8 extends JFrame implements Observer {/*cancelar viajes, funciÃ³n del gestor: hay que comprabar que no hay ninguna 
@@ -162,7 +159,7 @@ public class View8 extends JFrame implements Observer {/*cancelar viajes, funci�
                     ok.pack();
                     ok.setVisible(true);	
 
-                    model.getListaViajes().eliminarViaje(listaViajes.get(viajeMun));
+                    model.eliminarViaje(listaViajes.get(viajeMun));
 
                     setVisible(false);
                 }

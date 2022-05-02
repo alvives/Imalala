@@ -85,8 +85,7 @@ public class VistaAnadirAvion extends JFrame {
 			String id = jTextField1.getText();
 			String capacidad = jTextField2.getText();
 			
-			this.model.getListaTransportes().anadirTransporte(new Avion(id,capacidad));
-			model.dataUpdate();
+			this.model.anadirTransporte(new Avion(id,capacidad));
 
 			this.setVisible(false);
 		}else {

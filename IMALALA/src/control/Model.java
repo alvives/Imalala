@@ -7,10 +7,14 @@ import list.ListaReservas;
 import list.ListaTransportes;
 import list.ListaUsuarios;
 import list.ListaViajes;
+import model.Alojamiento;
 import model.Gestor;
+import model.Reserva;
+import model.Transporte;
 import model.Usuario;
+import model.Viaje;
 
-public class Model {
+public class Model implements Observable {
 	String ruta="IMALALA\\Base_Datos\\";
 	Gestor gestor = Gestor.getSingletonInstance("gestor", "1");
 	
@@ -57,9 +61,12 @@ public class Model {
 		listaAlojamientos.llenarAlojamientos(ruta);
 	}
 	
+
+
+
 	
 	
-	
+	/*		MÉTODOS GETS	*/
 	
 	public ListaUsuarios getListaUsuarios() {
 		return listaUsuarios;
@@ -86,7 +93,12 @@ public class Model {
 	}
 
 
-	// se utiliza para registrar observadores en el modelo.
+
+
+
+
+	/*		METODOS INTERFAZ OBSERVABLE		*/
+
 	public void registerObserver(Observer o) 	{
 		observer.add(o);
 	}
@@ -95,12 +107,19 @@ public class Model {
 		observer.remove(o);
 	}
 
-	public void dataUpdate() {
+	public void notificar() {
 		for (Iterator i = observer.iterator(); i.hasNext(); ) {
 			Observer o = (Observer)(i.next());
 			o.dataUpdate(this);
 		}
 	}
+
+
+
+
+
+	
+	/*			METODDOS EXPORTAR		*/
 
 	public void exportarUsuarios() {
 		listaUsuarios.exportarUsuarios(ruta);
@@ -122,4 +141,49 @@ public class Model {
 		listaReservas.exportarReservas(ruta);
     }
 	
+
+
+
+
+	/*		MÉTODOS MODIFICAR LISTAS	*/
+
+	public void anadirAlojamiento(Alojamiento alojamiento) {
+		listaAlojamientos.anadirAlojamiento(alojamiento);
+		notificar();
+	}
+	public void eliminarAlojamiento(Alojamiento alojamiento) {
+		listaAlojamientos.eliminarAlojamiento(alojamiento);
+		notificar();
+	}
+
+	public void anadirTransporte(Transporte tpt) {
+		listaTransportes.anadirTransporte(tpt);
+		notificar();
+	}
+	public void eliminarTransporte(Transporte tpt) {
+		listaTransportes.eliminarTransporte(tpt);
+		notificar();
+	}
+
+	public void anadirViaje(Viaje viaje) {
+		listaViajes.insertarViaje(viaje);
+		notificar();
+	}
+	public void eliminarViaje(Viaje viaje) {
+		listaViajes.eliminarViaje(viaje);
+		notificar();
+	}
+
+	public void anadirReserva(Reserva reserva) {
+		listaReservas.anadeReserva(reserva);
+		notificar();
+	}
+	public void eliminarReserva(Reserva reserva) {
+		listaReservas.eliminaReserva(reserva);
+		notificar();
+	}
+
+
+
+
 }

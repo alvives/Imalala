@@ -10,7 +10,6 @@ import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 
 import control.Model;
-import control.Observer;
 import model.EstrategiaPrecios;
 import model.EstrategiaPreciosBaratos;
 import model.EstrategiaPreciosCaros;

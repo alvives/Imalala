@@ -12,9 +12,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 import control.Model;
-import control.Observer;
 import model.Alojamiento;
-import model.Usuario;
 
 public class VistaAnadirAlojamiento extends JFrame {
 	Model model;
@@ -109,8 +107,7 @@ public class VistaAnadirAlojamiento extends JFrame {
 			String hotel= jTextField4.getText();
 			String ciudad = jTextField5.getText();
 			
-			this.model.getListaAlojamientos().anadirAlojamiento(new Alojamiento(id,capacidad,direccion,hotel,ciudad));
-			model.dataUpdate();
+			this.model.anadirAlojamiento(new Alojamiento(id,capacidad,direccion,hotel,ciudad));
 
 			this.setVisible(false);
 		}else {

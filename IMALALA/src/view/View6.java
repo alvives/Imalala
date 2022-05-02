@@ -163,13 +163,11 @@ public class View6 extends JFrame implements Observer {
                     ok.setVisible(true);	
 
 					//añadir una nueva Reserva
-					model.getListaReservas().anadeReserva(new Reserva("reserva" + (model.getListaReservas().getReservasUsuario(u).size() + 1), u, model.getListaViajes().getViajes().get(viajeMun), true));
+					model.anadirReserva(new Reserva("reserva" + (model.getListaReservas().getReservasUsuario(u).size() + 1), u, model.getListaViajes().getViajes().get(viajeMun), true));
 
 					//disminuir disponibles de viajes
                     model.getListaViajes().getViajes().get(viajeMun).anadirReserva();
 
-					//observer
-					model.dataUpdate();
 
                     setVisible(false);
                 }

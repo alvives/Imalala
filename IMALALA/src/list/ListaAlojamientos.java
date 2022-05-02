@@ -117,6 +117,7 @@ public class ListaAlojamientos {
 			}
 			i++;
 		}
+
 	}
 
 

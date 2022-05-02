@@ -147,8 +147,7 @@ public class VistaEliminarAlojamiento extends JFrame {
                     ok.pack();
                     ok.setVisible(true);	
 
-                    model.getListaAlojamientos().eliminarAlojamiento(listaAlojamientos.get(alojamientoNum));
-					model.dataUpdate();
+                    model.eliminarAlojamiento(listaAlojamientos.get(alojamientoNum));
 
                     setVisible(false);
                 }

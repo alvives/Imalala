@@ -1,3 +1,4 @@
 viaje1-alojamiento1-B2-B2-0-102.99
 viaje2-alojamiento2-B2-B2-4-500.0
 viaje3-alojamiento3-B2-B2-6-1000.0
+viaje22-alojamiento2-B1-B2-3-1200.0

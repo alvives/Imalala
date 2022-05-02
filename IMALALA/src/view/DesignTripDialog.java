@@ -4,9 +4,13 @@ import java.awt.*;
 
 import javax.swing.*;
 
+import control.Model;
+
 import java.util.List;
 
 public class DesignTripDialog extends JDialog{
+    private Model modelo;
+
     private JComboBox <String> transpIda;
     private JComboBox <String> transpVuelta;
     private JComboBox <String> alojamiento;
@@ -90,7 +94,7 @@ public class DesignTripDialog extends JDialog{
             && (int)reservasDisp.getValue()!=0){
                 try{
                     Double.parseDouble(priceField.getText());
-                    _status=1; 
+                    _status=1;
                     DesignTripDialog.this.setVisible(false);
                 }catch(NumberFormatException nfe){
                     JOptionPane.showMessageDialog(null, "El formato del precio esta mal, separe los digitos con un punto");
