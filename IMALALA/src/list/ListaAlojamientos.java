@@ -85,8 +85,12 @@ public class ListaAlojamientos {
 			}
 			i++;
 		}
-		return (listaAlojamientos.get(i-1));
-	}
+		if (encont){
+			return (listaAlojamientos.get(i-1));
+
+		}else{
+			return null;
+		}	}
 
 	public ArrayList<Alojamiento> getListaAlojamiento(){
 		return listaAlojamientos;

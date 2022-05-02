@@ -138,7 +138,12 @@ public class ListaTransportes {
 			}
 			i++;
 		}
-		return (listaTransportes.get(i-1));
+		if (encont){
+			return (listaTransportes.get(i-1));
+
+		}else{
+			return null;
+		}
 		
 	}
 

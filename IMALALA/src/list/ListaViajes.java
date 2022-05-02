@@ -147,8 +147,12 @@ public class ListaViajes {
 			}
 			i++;
 		}
-		return (listaViajes.get(i-1));
-	}
+		if (encont){
+			return (listaViajes.get(i-1));
+
+		}else{
+			return null;
+		}	}
 
     public boolean contieneAlojamiento(Alojamiento alojamiento) {
 		boolean encont = false;
