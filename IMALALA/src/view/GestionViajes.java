@@ -17,7 +17,8 @@ import model.Viaje;
 public class GestionViajes extends JFrame implements Observer {
 	Model model;
 	Gestor g;
-
+	
+	ConsultarViajes consultarviajes;
     ModificarViajeView1 viajeViewModificar1;
 	View8 view8;
 	GestionAlojamientos gestionAlojamiento;
@@ -30,6 +31,7 @@ public class GestionViajes extends JFrame implements Observer {
 	JButton jButton2 = new JButton();
 	JButton jButton3 = new JButton();
     JButton jButton4 = new JButton();
+    JButton jButton5 = new JButton();
     
 	public GestionViajes(Model model, Gestor g) 	{
 		this.model = model;
@@ -59,8 +61,12 @@ public class GestionViajes extends JFrame implements Observer {
         jButton3.setBounds(new Rectangle(42, 156, 300, 27));
 		jButton3.setText("Eliminar Viaje");
 		jButton3.addActionListener(e->jButton3_actionPerformed(e));
+		
+		jButton5.setBounds(new Rectangle(42, 208, 300, 27));
+		jButton5.setText("Consultar Viajes");
+		jButton5.addActionListener(e->jButton5_actionPerformed(e));
 
-		jButton4.setBounds(new Rectangle(42, 208, 300, 27));
+		jButton4.setBounds(new Rectangle(42, 258, 300, 27));
 		jButton4.setText("Volver");
 		jButton4.addActionListener(e-> this.setVisible(false));
 		
@@ -69,6 +75,7 @@ public class GestionViajes extends JFrame implements Observer {
 		this.getContentPane().add(jButton1, null);
 		this.getContentPane().add(jButton2, null);
 		this.getContentPane().add(jButton3, null);
+	    this.getContentPane().add(jButton5, null);
         this.getContentPane().add(jButton4, null);
 		
 	}
@@ -89,7 +96,9 @@ public class GestionViajes extends JFrame implements Observer {
 
 		while(status==1) {
 
-			Viaje viaje=model.getListaViajes().buscarViaje(dialog.getIdViaje());
+			String idViaje=model.getListaViajes().buscarViaje(dialog.getIdViaje()).getId();
+			String idViajeEleg=dialog.getIdViaje().toString();
+			
 			Transporte ida=model.getListaTransportes().buscarTransporte(dialog.getTranspIda());
 			Transporte vuelta=model.getListaTransportes().buscarTransporte(dialog.getTranspVuelta());
 			Alojamiento aloj=model.getListaAlojamientos().buscarAlojamiento(dialog.getAlojamiento());
@@ -100,15 +109,15 @@ public class GestionViajes extends JFrame implements Observer {
 			int Capacidad_Transp=Math.min(Capacidad_Ida, Capacidad_Vuelta);
 			int maxReserva=Math.min(Capacidad_Transp, Capacidad_Aloj);
 
-			if(viaje!=null){
+			if(idViaje.equals(idViajeEleg)){
 				JOptionPane.showMessageDialog(null, "El id del viaje ya existe, ponga un id diferente");
 				status=dialog.open(idTransp, idAlojamientos);
 			}else if(dialog.getReservas()>maxReserva){
 				JOptionPane.showMessageDialog(null, "El numero de reservas supera a la capacidad maxima de alojamientos y transportes, no debe superar de: "+String.valueOf(maxReserva)+" Reservas");
 				status=dialog.open(idTransp, idAlojamientos);
 			}else{
-				Viaje viajeCreado=new Viaje(dialog.getIdViaje().toString(),aloj, ida, vuelta, dialog.getReservas(), dialog.getPrecio());
-				this.model.anadirViaje(viajeCreado);
+				Viaje viajeCreado=new Viaje(dialog.getIdViaje(),aloj, ida, vuelta, dialog.getReservas(), dialog.getPrecio());
+				model.anadirViaje(viajeCreado);
 				status=0;
 			}
 		}
@@ -125,6 +134,11 @@ public class GestionViajes extends JFrame implements Observer {
 		this.view8 = new View8(this.model, this.g);
 		this.view8.setSize(800,410);
 		this.view8.setVisible(true);
+	}
+	void jButton5_actionPerformed(ActionEvent e) {
+		this.consultarviajes = new ConsultarViajes(this.model, this.g);
+		this.consultarviajes.setSize(700,300);
+		this.consultarviajes.setVisible(true);
 	}
 
 
