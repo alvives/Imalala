@@ -25,7 +25,7 @@ public class PanelBienvenida extends JFrame{
 
         this.setVisible(true);
         this.setSize(1300, 550);
-        this.setLocation(400, 200);
+        this.setLocation(getX()+300, getY()+200);
 
         this.add(label, BorderLayout.PAGE_START);
         JPanel panel = new JPanel(new FlowLayout());
