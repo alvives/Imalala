@@ -24,8 +24,9 @@ public class PanelBienvenida extends JFrame{
         JLabel label = new JLabel(new ImageIcon("IMALALA\\Imagen\\titulo.png"));
 
         this.setVisible(true);
-        this.setSize(1300, 550);
-        this.setLocation(getX()+300, getY()+200);
+        this.setSize(1100, 550);
+        //this.setLocation(getX()+300, getY()+200);
+        setLocationRelativeTo(null);
 
         this.add(label, BorderLayout.PAGE_START);
         JPanel panel = new JPanel(new FlowLayout());
