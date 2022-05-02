@@ -153,4 +153,8 @@ public class ListaUsuarios {
 			}
 		}
 	}
+
+	public Integer size() {
+		return listaUsuarios.size();
+	}
 }

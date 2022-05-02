@@ -13,11 +13,4 @@ public class GestorTest {
 		assertEquals(Gestor.getSingletonInstance("gestor2", "2").getNombre(),"gestor1","No se deber�a de haber creado, porque ya exist�a un gestor");
 		
 	}
-
-	@Test
-	public void test2() {
-		
-		
-		
-	}
 }
