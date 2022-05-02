@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 import model.Viaje;
 import model.Alojamiento;
+import model.Reserva;
 import model.Transporte;
 public class ListaViajes {
 	private ArrayList<Viaje> listaViajes;
@@ -193,4 +194,8 @@ public class ListaViajes {
 		}
 		return encont;
     }
+	
+	public ArrayList<Viaje> getListaViajes() {
+		return listaViajes;
+	}
 }
