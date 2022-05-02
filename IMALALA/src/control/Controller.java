@@ -28,6 +28,7 @@ public class Controller extends JFrame {
 	JLabel jLabel3 = new JLabel();
 	JLabel jLabel4 = new JLabel();
 	JDialog jPanel1 = new JDialog();
+	char defaultChar = jPasswordField.getEchoChar();
 
 	public Controller() {
 		try {
@@ -107,7 +108,7 @@ public class Controller extends JFrame {
 		if (checkPassword.isSelected()) {
 			jPasswordField.setEchoChar((char) 0);
 		} else {
-			jPasswordField.setEchoChar('.');
+			jPasswordField.setEchoChar(defaultChar);
 		}
 	}
 
