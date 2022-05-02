@@ -43,6 +43,7 @@ public class Controller extends JFrame {
 	
 
 	private void jbInit() throws Exception {
+		setTitle("Panel de Inicio");
 		setLocation(getX() + 600, getY() + 200);
 		model.llenarListaUsuarios();
 		model.llenarListaTransportes();

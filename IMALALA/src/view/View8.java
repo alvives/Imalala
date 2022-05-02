@@ -53,7 +53,7 @@ public class View8 extends JFrame {/*cancelar viajes, funciÃ³n del gestor: hay
 			this.g = g;
 			//listaReservas = model.getListaReservas();//.getReservasUsuario(u);
             listaViajes = model.getListaViajes().getViajes();
-			setTitle("Cancelar Viajes");
+			setTitle("Eliminar Viajes");
 			panel = new JPanel(new BorderLayout());	
 			panel1 = new JPanel(new BorderLayout());	
 			jbInit();
@@ -168,7 +168,7 @@ public class View8 extends JFrame {/*cancelar viajes, funciÃ³n del gestor: hay
                     ok.setTitle("Error: No se puede eliminar el viaje");
                     ok.setLocation(getX()+300, getY()+200);
                     JPanel okpanel = new JPanel(new BorderLayout());
-                    okpanel.add(new JLabel("No se puede eliminar el viaje " + model.getListaReservas().getReservasRealizadas(listaViajes.get(viajeMun))), BorderLayout.PAGE_START);
+                    okpanel.add(new JLabel("No se puede eliminar el viaje " +listaViajes.get(viajeMun).getId()), BorderLayout.PAGE_START);
                     JButton okButton =new JButton("VOLVER");
                     okpanel.add(okButton,BorderLayout.CENTER);
                     okButton.addActionListener(new ActionListener() {

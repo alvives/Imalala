@@ -47,6 +47,7 @@ public class View5 extends JFrame {
 	}
 	
 	private void jbInit() throws Exception 	{
+		setTitle("Panel de Gestor");
 		setLocation(getX()+600, getY()+200);
 		this.getContentPane().setLayout(null);
 		jScrollPane1.setBounds(new Rectangle(0, 0, 3, 3));

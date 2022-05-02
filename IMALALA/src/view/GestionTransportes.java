@@ -44,6 +44,7 @@ public class GestionTransportes extends JFrame implements Observer {
 	}
 	
 	private void jbInit() throws Exception 	{
+		setTitle("Gestion de Transporte");
 		setLocation(getX()+600, getY()+200);
 		this.getContentPane().setLayout(null);
 		jScrollPane1.setBounds(new Rectangle(0, 0, 3, 3));

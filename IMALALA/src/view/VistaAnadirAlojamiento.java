@@ -45,6 +45,7 @@ public class VistaAnadirAlojamiento extends JFrame {
 	}
 	
 	private void jbInit() throws Exception 	{
+		setTitle("Anadir Alojamiento");
 		setLocation(getX()+600, getY()+200);
 		this.getContentPane().setLayout(null);
 		jScrollPane1.setBounds(new Rectangle(0, 0, 3, 3));

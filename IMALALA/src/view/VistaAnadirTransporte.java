@@ -31,6 +31,7 @@ public class VistaAnadirTransporte extends JFrame {
 	}
 	
 	private void jbInit() throws Exception 	{
+		setTitle("Anadir Transporte");
 		setLocation(getX()+600, getY()+200);
 		
 		JPanel panel = new JPanel();

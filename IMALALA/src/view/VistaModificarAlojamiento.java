@@ -52,6 +52,7 @@ public class VistaModificarAlojamiento extends JFrame implements Observer {
 	}
 	
 	private void jbInit() throws Exception 	{
+		setTitle("Modificar Alojamiento");
 		setLocation(getX()+600, getY()+200);
 		this.getContentPane().setLayout(null);
 		jScrollPane1.setBounds(new Rectangle(0, 0, 3, 3));

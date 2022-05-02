@@ -44,6 +44,7 @@ public class VistaAnadirAvion extends JFrame {
 	}
 	
 	private void jbInit() throws Exception 	{
+		setTitle("Anadir Avion");
 		setLocation(getX()+600, getY()+200);
 		this.getContentPane().setLayout(null);
 		jScrollPane1.setBounds(new Rectangle(0, 0, 3, 3));
