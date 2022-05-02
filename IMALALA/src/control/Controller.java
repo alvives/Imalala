@@ -22,7 +22,7 @@ public class Controller extends JFrame {
 	JButton jButton3 = new JButton();
 	JTextField jTextField1 = new JTextField();
 	JPasswordField jPasswordField = new JPasswordField();
-	JCheckBox checkPassword = new JCheckBox("mostrar contraseña");
+	JCheckBox checkPassword = new JCheckBox("mostrar contrasena");
 	JLabel jLabel1 = new JLabel();
 	JLabel jLabel2 = new JLabel();
 	JLabel jLabel3 = new JLabel();
@@ -77,7 +77,7 @@ public class Controller extends JFrame {
 		jTextField1.setBounds(new Rectangle(150, 55, 100, 31));
 		jPasswordField.setText("");
 		jPasswordField.setBounds(new Rectangle(150, 100, 100, 31));
-		checkPassword.addActionListener(e -> mostrarContraseña());
+		checkPassword.addActionListener(e -> mostrarContrasena());
 		checkPassword.setBounds(new Rectangle(150, 145, 150, 31));
 		jLabel1.setText("Introduzca sus datos para iniciar sesion:");
 		jLabel1.setBounds(new Rectangle(41, 15, 300, 23));
@@ -102,11 +102,11 @@ public class Controller extends JFrame {
 
 	}
 
-	private void mostrarContraseña() {
+	private void mostrarContrasena() {
 		if (checkPassword.isSelected()) {
 			jPasswordField.setEchoChar((char) 0);
 		} else {
-			jPasswordField.setEchoChar('•');
+			jPasswordField.setEchoChar('.');
 		}
 	}
 
