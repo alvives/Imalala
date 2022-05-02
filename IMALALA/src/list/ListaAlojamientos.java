@@ -19,6 +19,10 @@ public class ListaAlojamientos {
 		
 		this.listaAlojamientos = new ArrayList<Alojamiento>();
 	}
+
+	public int getSize(){
+		return listaAlojamientos.size();
+	}
 	
 
 	public void llenarAlojamientos(String ruta) {

@@ -132,7 +132,7 @@ public class GestionViajes extends JFrame implements Observer {
 
     @Override
     public void dataUpdate(Model model) {
-		jLabel2.setText("Viajes actuales: " + model.getListaViajes().getViajes().size());        
+		jLabel2.setText("Viajes actuales: " + model.getSizeListaViajes());        
     }
 
 }

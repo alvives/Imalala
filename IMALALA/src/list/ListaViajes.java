@@ -16,6 +16,10 @@ public class ListaViajes {
 	public ListaViajes () {
 		listaViajes = new ArrayList<Viaje>();
 	}
+
+	public int getSize(){
+		return listaViajes.size();
+	}
 	
 	public void insertarViaje(Viaje v) {
 		listaViajes.add(v);

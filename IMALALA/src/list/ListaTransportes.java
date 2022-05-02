@@ -20,6 +20,14 @@ public class ListaTransportes {
 	public ListaTransportes() {
 		listaTransportes = new ArrayList<Transporte>();
 	}
+
+
+	public int getSize(){
+		return listaTransportes.size();
+	}
+
+
+
 	public void modificarTransporte(Transporte transporte, String id, String capacidad) {
 		boolean b = false;
 		int i = 0;

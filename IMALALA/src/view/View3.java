@@ -15,7 +15,7 @@ import control.Model;
 import control.Observer;
 import model.Usuario;
 
-public class View3 extends JFrame implements Observer {
+public class View3 extends JFrame {
 	Model model;
 	Usuario u;
 	JScrollPane jScrollPane1 = new JScrollPane();	
@@ -101,11 +101,5 @@ public class View3 extends JFrame implements Observer {
 		}
 	}
 		
-	@Override
-	public void dataUpdate(Model model) {
-		
-	}
-	
-
 	
 }

@@ -16,7 +16,7 @@ import model.Gestor;
 
 
 //Ventana gestor
-public class View5 extends JFrame implements Observer {
+public class View5 extends JFrame {
 	Model model;
 	Usuario u;
 	Gestor g;
@@ -121,13 +121,5 @@ public class View5 extends JFrame implements Observer {
 	void jButton4_actionPerformed(ActionEvent e) {
 		this.setVisible(false);
 	}
-
-	@Override
-	public void dataUpdate(Model model) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	
 	
 }

@@ -119,7 +119,7 @@ public class GestionAlojamientos extends JFrame implements Observer {
 	}
     @Override
 	public void dataUpdate(Model model) {
-		jLabel2.setText("Alojamientos actuales: " + model.getListaAlojamientos().getListaAlojamiento().size());
+		jLabel2.setText("Alojamientos actuales: " + model.getSizeListaAlojamientos());
 	}
 
 }

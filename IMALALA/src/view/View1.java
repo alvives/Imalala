@@ -146,7 +146,7 @@ public class View1 extends JFrame implements Observer {
 	
 	@Override
 	public void dataUpdate(Model model) {
-		jLabel2.setText(" Reservas actuales: " + model.getListaReservas().getReservasUsuario(this.u).size());
+		jLabel2.setText(" Reservas actuales: " + model.getSizeListaReservas());
 	}
 	
 

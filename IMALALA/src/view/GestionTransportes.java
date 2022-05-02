@@ -114,7 +114,7 @@ public class GestionTransportes extends JFrame implements Observer {
 	}
 	@Override
     public void dataUpdate(Model model) {
-		jLabel2.setText("Transportes actuales: " + model.getListaTransportes().getListaTransportes().size());        
+		jLabel2.setText("Transportes actuales: " + model.getSizeListaTransportes());        
     }
 
 }

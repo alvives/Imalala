@@ -94,7 +94,19 @@ public class Model implements Observable {
 
 
 
-
+	/*			GET SIZE		*/
+	public int getSizeListaAlojamientos(){
+		return listaAlojamientos.getSize();
+	}
+	public int getSizeListaTransportes(){
+		return listaTransportes.getSize();
+	}
+	public int getSizeListaViajes(){
+		return listaViajes.getSize();
+	}
+	public int getSizeListaReservas(){
+		return listaReservas.getSize();
+	}
 
 
 	/*		METODOS INTERFAZ OBSERVABLE		*/

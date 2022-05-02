@@ -24,7 +24,7 @@ import model.Viaje;
 import model.Gestor;
 
 
-public class View8 extends JFrame implements Observer {/*cancelar viajes, funciÃ³n del gestor: hay que comprabar que no hay ninguna 
+public class View8 extends JFrame {/*cancelar viajes, funciÃ³n del gestor: hay que comprabar que no hay ninguna 
                                                         reserva para el viaje seleccionado(soluciÃ³n: poner el numero de reservas y 
                                                         para los viajes con reservas, poner a lado un "no se puede cancelar")(pendiente), 
                                                         si elige uno con reservas saldrÃ¡ un cuadro de error(pendiente)*/
@@ -204,14 +204,5 @@ public class View8 extends JFrame implements Observer {/*cancelar viajes, funci�
 
 	}
 
-	@Override
-	public void dataUpdate(Model model) {
-		// TODO Auto-generated method stub
-		
-	}
 
-
-	
-
-	
 }

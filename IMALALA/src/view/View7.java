@@ -23,7 +23,7 @@ import control.Observer;
 import model.Usuario;
 import model.Reserva;
 
-public class View7 extends JFrame implements Observer {
+public class View7 extends JFrame {
 	Model model;
 	Usuario u;
 	JPanel panel;
@@ -166,14 +166,4 @@ public class View7 extends JFrame implements Observer {
 
 	}
 
-	@Override
-	public void dataUpdate(Model model) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	
-
-	
 }

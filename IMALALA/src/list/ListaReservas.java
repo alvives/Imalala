@@ -20,6 +20,10 @@ public class ListaReservas {
 
 	}
 
+	public int getSize() {
+		return listaReservas.size();
+	}
+
 	public void eliminaReserva(Reserva r) {
 		boolean b = false;
 		int i = 0;

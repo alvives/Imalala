@@ -25,12 +25,10 @@ import model.EstrategiaPrecios;
 import model.Gestor;
 import model.Reserva;
 import model.Usuario;
-import list.ListaReservas;
-import list.ListaViajes;
 
 
 //USUARIO: RESERVAR VIAJE
-public class View6 extends JFrame implements Observer {
+public class View6 extends JFrame {
 	Model model;
 	Usuario u;
 	JPanel panel;
@@ -210,12 +208,6 @@ public class View6 extends JFrame implements Observer {
 		panel1.add(BPanel,BorderLayout.CENTER);
 
 
-	}
-
-	@Override
-	public void dataUpdate(Model model) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }
