@@ -24,7 +24,7 @@ public class Model implements Observable {
 	ListaTransportes listaTransportes = new ListaTransportes();
 	ListaAlojamientos listaAlojamientos = new ListaAlojamientos();
 
-	ArrayList observer = new ArrayList();
+	ArrayList <Observer> observer = new ArrayList();
 	
 	public Model() 	{ 
 		super();
