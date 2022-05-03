@@ -95,9 +95,7 @@ public class GestionViajes extends JFrame implements Observer {
 		int status=dialog.open(idTransp, idAlojamientos);
 
 		while(status==1) {
-
-			String idViaje=model.getListaViajes().buscarViaje(dialog.getIdViaje()).getId();
-			String idViajeEleg=dialog.getIdViaje().toString();
+			Viaje viaje=model.getListaViajes().buscarViaje(dialog.getIdViaje());
 			
 			Transporte ida=model.getListaTransportes().buscarTransporte(dialog.getTranspIda());
 			Transporte vuelta=model.getListaTransportes().buscarTransporte(dialog.getTranspVuelta());
@@ -109,15 +107,15 @@ public class GestionViajes extends JFrame implements Observer {
 			int Capacidad_Transp=Math.min(Capacidad_Ida, Capacidad_Vuelta);
 			int maxReserva=Math.min(Capacidad_Transp, Capacidad_Aloj);
 
-			if(idViaje.equals(idViajeEleg)){
+			if(viaje!=null){
 				JOptionPane.showMessageDialog(null, "El id del viaje ya existe, ponga un id diferente");
 				status=dialog.open(idTransp, idAlojamientos);
 			}else if(dialog.getReservas()>maxReserva){
 				JOptionPane.showMessageDialog(null, "El numero de reservas supera a la capacidad maxima de alojamientos y transportes, no debe superar de: "+String.valueOf(maxReserva)+" Reservas");
 				status=dialog.open(idTransp, idAlojamientos);
 			}else{
-				Viaje viajeCreado=new Viaje(dialog.getIdViaje(),aloj, ida, vuelta, dialog.getReservas(), dialog.getPrecio());
-				model.anadirViaje(viajeCreado);
+				Viaje viajeCreado=new Viaje(dialog.getIdViaje().toString(),aloj, ida, vuelta, dialog.getReservas(), dialog.getPrecio());
+				this.model.anadirViaje(viajeCreado);
 				status=0;
 			}
 		}
