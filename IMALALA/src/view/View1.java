@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 
 import control.Model;
@@ -136,8 +137,12 @@ public class View1 extends JFrame implements Observer {
 	}
 	
 	void jButton5_actionPerformed(ActionEvent e) {
-		this.model.getListaUsuarios().darBajaUsuario(this.u.getId());
-		this.setVisible(false);
+		if (model.getSizeListaReservas(u)<=0){
+			this.model.getListaUsuarios().darBajaUsuario(this.u.getId());
+			this.setVisible(false);
+		}
+		else
+			JOptionPane.showMessageDialog(null, "El usuario no se puede eliminar, porque tiene reservas activas");
 	}
 
 	void jButton6_actionPerformed(ActionEvent e) {
@@ -147,7 +152,7 @@ public class View1 extends JFrame implements Observer {
 	
 	@Override
 	public void dataUpdate(Model model) {
-		jLabel2.setText(" Reservas actuales: " + model.getSizeListaReservas());
+		jLabel2.setText(" Reservas actuales: " + model.getSizeListaReservas(u));
 	}
 	
 

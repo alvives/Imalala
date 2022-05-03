@@ -132,7 +132,7 @@ public class View6 extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				if(model.getListaViajes().getViajes().get(viajeMun).getReservasDisponibles() > 0){
+				if(listaViajes.get(viajeMun).getReservasDisponibles() > 0){
                     JDialog ok=new JDialog();
                     ok.setTitle("Viaje reservado");
                     ok.setLocation(getX()+300, getY()+200);
@@ -174,7 +174,7 @@ public class View6 extends JFrame {
                     ok.setTitle("Error: No se puede reservar el viaje");
                     ok.setLocation(getX()+300, getY()+200);
                     JPanel okpanel = new JPanel(new BorderLayout());
-                    okpanel.add(new JLabel("No se puede reservar el viaje " + model.getListaViajes().getViajes().get(viajeMun).getId()), BorderLayout.PAGE_START);
+                    okpanel.add(new JLabel("No se puede reservar el viaje " + listaViajes.get(viajeMun).getId()), BorderLayout.PAGE_START);
                     JButton okButton =new JButton("VOLVER");
                     okpanel.add(okButton,BorderLayout.CENTER);
                     okButton.addActionListener(new ActionListener() {

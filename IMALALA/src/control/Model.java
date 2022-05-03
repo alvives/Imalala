@@ -109,8 +109,8 @@ public class Model implements Observable {
 	public int getSizeListaViajes(){
 		return listaViajes.getSize();
 	}
-	public int getSizeListaReservas(){
-		return listaReservas.getSize();
+	public int getSizeListaReservas(Usuario u){
+		return listaReservas.getReservasUsuario(u).size();
 	}
 
 
