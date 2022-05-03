@@ -4,3 +4,5 @@ clase model (si se ejecuta mediante visual studio code, se puede mantener la rut
 En el inicio de sesión de la aplicación, se puede optar por introducir en el id "gestor" con su contraseña "1", para acceder a las opciones que puede realizar el
 gestor. 
 Si se quiere iniciar sesión como usuario puede registrarse o introducir el usuario con el id "a" y contraseña "a".
+Los documentos uml y scrum están en la wiki.
+Hemos corregido: eliminar usuario si tiene reservas.
