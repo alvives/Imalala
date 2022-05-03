@@ -2,6 +2,8 @@ package view;
 
 import javax.swing.JFrame;
 import control.Controller;
+import control.Model;
+
 import java.awt.*;
 
 import javax.imageio.ImageIO;
@@ -12,7 +14,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class PanelBienvenida extends JFrame{
-    String ruta = "IMALALA\\Imagen\\";
+    String ruta = Model.getRutaGlobal()+"\\Imagen\\";
     public PanelBienvenida(){
         this.setTitle("Bienvenido");
         createAndShowGUI();

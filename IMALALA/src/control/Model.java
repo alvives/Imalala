@@ -15,7 +15,8 @@ import model.Usuario;
 import model.Viaje;
 
 public class Model implements Observable {
-	String ruta="IMALALA\\Base_Datos\\";
+	static String rutaGlobal = "IMALALA";
+	String ruta=rutaGlobal+"\\Base_Datos\\";
 	Gestor gestor = Gestor.getSingletonInstance("gestor", "1");
 	
 	ListaUsuarios listaUsuarios = new ListaUsuarios();
@@ -30,6 +31,10 @@ public class Model implements Observable {
 		super();
 	}
 	
+	public static String getRutaGlobal(){
+		return rutaGlobal;
+	}
+
 	public void anadirUsuario(Usuario u) {
 		this.listaUsuarios.anadirUsuario(u);
 	}
