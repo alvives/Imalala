@@ -51,7 +51,7 @@ public class View4 extends JFrame {
 		try{
 			this.model = model;
 			this.u = u;
-			listaReservas = model.getListaReservas().getListaReservas();//.getReservasUsuario(u);
+			listaReservas = model.getListaReservas().getReservasUsuario(u);//.getReservasUsuario(u);
 			setTitle("Consultar reservas");
 			panel = new JPanel(new BorderLayout());	
 			panel1 = new JPanel(new BorderLayout());	

@@ -161,7 +161,7 @@ public class View6 extends JFrame {
                     ok.setVisible(true);	
 
 					//añadir una nueva Reserva
-					model.anadirReserva(new Reserva("reserva" + (model.getListaReservas().getReservasUsuario(u).size() + 1), u, model.getListaViajes().getViajes().get(viajeMun), true));
+					model.anadirReserva(new Reserva("reserva" + (model.getListaReservas().getReservasUsuario(u).size() + 1), u, listaViajes.get(viajeMun), true));
 
 					//disminuir disponibles de viajes
                     model.getListaViajes().getViajes().get(viajeMun).anadirReserva();

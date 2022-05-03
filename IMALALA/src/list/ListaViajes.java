@@ -198,4 +198,6 @@ public class ListaViajes {
 	public ArrayList<Viaje> getListaViajes() {
 		return listaViajes;
 	}
+
+
 }
