@@ -114,11 +114,17 @@ public class ModificarViajeView1 extends JFrame implements Observer {
 
 				String ida=jTextField3.getText();
 				String vuelta=jTextField3.getText();
-
-				this.model.getListaViajes().modificarViaje(this.model.getListaViajes().buscarViaje(id), this.model.getListaAlojamientos().buscarAlojamiento(alojamiento), 
-				this.model.getListaTransportes().buscarTransporte(ida), 	this.model.getListaTransportes().buscarTransporte(vuelta));;
-				this.setVisible(false);
-
+				if(model.getListaAlojamientos().buscarAlojamiento(alojamiento)==null){
+					JOptionPane.showMessageDialog(new JFrame(), "Error, id del alojamiento incorrecto", "ERROR", JOptionPane.ERROR_MESSAGE);
+				}else if(model.getListaTransportes().buscarTransporte(ida)==null){
+					JOptionPane.showMessageDialog(new JFrame(), "Error, id del transporte de ida incorrecto", "ERROR", JOptionPane.ERROR_MESSAGE);
+				}else if(model.getListaTransportes().buscarTransporte(vuelta)==null){
+					JOptionPane.showMessageDialog(new JFrame(), "Error, id del transporte de vuelta incorrecto", "ERROR", JOptionPane.ERROR_MESSAGE);
+				}else{
+					this.model.getListaViajes().modificarViaje(this.model.getListaViajes().buscarViaje(id), this.model.getListaAlojamientos().buscarAlojamiento(alojamiento), 
+					this.model.getListaTransportes().buscarTransporte(ida), 	this.model.getListaTransportes().buscarTransporte(vuelta));;
+					this.setVisible(false);
+				}
 			}else JOptionPane.showMessageDialog(new JFrame(), "Error, id del viaje incorrecto", "ERROR", JOptionPane.ERROR_MESSAGE);
 			
 		}else {
