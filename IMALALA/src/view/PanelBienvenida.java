@@ -12,7 +12,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class PanelBienvenida extends JFrame{
-
+    String ruta = "IMALALA\\Imagen\\";
     public PanelBienvenida(){
         this.setTitle("Bienvenido");
         createAndShowGUI();
@@ -21,7 +21,7 @@ public class PanelBienvenida extends JFrame{
 
     private void createAndShowGUI() {
 
-        JLabel label = new JLabel(new ImageIcon("IMALALA\\Imagen\\titulo.png"));
+        JLabel label = new JLabel(new ImageIcon(ruta+"titulo.png"));
 
         this.setVisible(true);
         this.setSize(1100, 550);
@@ -30,15 +30,15 @@ public class PanelBienvenida extends JFrame{
 
         this.add(label, BorderLayout.PAGE_START);
         JPanel panel = new JPanel(new FlowLayout());
-        panel.add(new JLabel(new ImageIcon("IMALALA\\Imagen\\viaje1.png")));
-        panel.add(new JLabel(new ImageIcon("IMALALA\\Imagen\\viaje2.png")));
-        panel.add(new JLabel(new ImageIcon("IMALALA\\Imagen\\viaje3.png")));
+        panel.add(new JLabel(new ImageIcon(ruta+"viaje1.png")));
+        panel.add(new JLabel(new ImageIcon(ruta+"viaje2.png")));
+        panel.add(new JLabel(new ImageIcon(ruta+"viaje3.png")));
 
         this.add(panel, BorderLayout.CENTER);
 
         JPanel panel1 = new JPanel(new FlowLayout());
         JButton boton = new JButton();
-        boton.setIcon(loadImage("IMALALA\\Imagen\\boton.png"));
+        boton.setIcon(loadImage(ruta+"boton.png"));
         boton.addActionListener(new ActionListener() {
 
                 @Override
@@ -54,7 +54,7 @@ public class PanelBienvenida extends JFrame{
         panel1.add(boton);
         this.add(panel1, BorderLayout.PAGE_END);
         try {
-                FondoSwing fondo = new FondoSwing(ImageIO.read(new File("IMALALA\\Imagen\\fondo.jpg")));
+                FondoSwing fondo = new FondoSwing(ImageIO.read(new File(ruta+"fondo.jpg")));
                 JPanel panel2 = (JPanel) this.getContentPane();
                 panel2.setBorder(fondo);
                 panel1.setBorder(fondo);
